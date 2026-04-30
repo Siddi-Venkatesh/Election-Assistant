@@ -48,7 +48,7 @@ export default function Home() {
       icon: <Download className="w-6 h-6" />,
       content: t('step_5_desc') || 'Download a secure, digital version of your Voter ID card (e-EPIC) that can be stored on your mobile device.',
       action: t('step_5_action') || 'Get Digital Voter ID',
-      route: '/download-epic'
+      route: 'https://voters.eci.gov.in/home/e-epic-download'
     }
   ];
 
@@ -162,7 +162,13 @@ export default function Home() {
               </div>
 
               <button 
-                onClick={() => navigate(activeStep.route)}
+                onClick={() => {
+                  if (activeStep.route.startsWith('http')) {
+                    window.open(activeStep.route, '_blank', 'noopener,noreferrer');
+                  } else {
+                    navigate(activeStep.route);
+                  }
+                }}
                 className="w-full py-4 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-indigo-600 dark:to-purple-600 text-white rounded-2xl font-bold hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 {activeStep.action}
