@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       app_title: "VoterAssist",
-      for_first_time: "For First-Time Voters 🗳️",
+      for_first_time: "Election Process Education 🗳️",
       hero_title_1: "Your Voice Matters.",
       hero_title_2: "Let's Get You Ready.",
       hero_desc: "Navigating your first election can be overwhelming. We've broken down the process into simple, actionable steps so you can cast your vote with confidence.",
@@ -122,7 +122,7 @@ const resources = {
   te: {
     translation: {
       app_title: "VoterAssist (తెలుగు)",
-      for_first_time: "For First-Time Voters 🗳️",
+      for_first_time: "Election Process Education 🗳️",
       hero_title_1: "Your Voice Matters.",
       hero_title_2: "Let's Get You Ready.",
       hero_desc: "Navigating your first election can be overwhelming. We've broken down the process into simple, actionable steps so you can cast your vote with confidence.",

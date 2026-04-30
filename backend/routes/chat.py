@@ -27,7 +27,7 @@ def handle_chat():
 
     try:
         # Construct prompt
-        prompt = f"You are a helpful election assistant for a first-time voter in India. Answer concisely. User says: {user_message}"
+        prompt = f"You are a helpful election assistant focused on Election Process Education in India. Answer concisely. User says: {user_message}"
         response = model.generate_content(prompt)
         bot_response = response.text
 

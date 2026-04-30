@@ -4,9 +4,9 @@ Welcome to the **VoterAssist** repository! This project is an interactive, step-
 
 This project is a submission for the Hack2Skill hackathon.
 
-## 🎯 Chosen Vertical: First-Time Voters
+## 🎯 Chosen Vertical: Election Process Education
 
-We chose the **First-Time Voter** persona. First-time voters often find the election process overwhelming and confusing due to lack of prior experience. Our solution breaks down the journey into simple, actionable, and visual steps to build confidence and encourage participation.
+We chose the **Election Process Education** vertical. Citizens often find the election process overwhelming and confusing due to lack of prior experience. Our solution breaks down the journey into simple, actionable, and visual steps to build confidence and encourage participation.
 
 ## 🧠 Approach and Logic
 
