@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3 } from 'lucide-react';
+import { BarChart3, Trophy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
@@ -121,6 +121,11 @@ export default function ElectionResults() {
   const [selectedState, setSelectedState] = useState('All India');
 
   const data = electionData[selectedYear]?.[selectedState] || { seats: [], voteShare: [] };
+
+  // Determine the winner by finding the party with the most seats
+  const winner = data.seats.length > 0 
+    ? data.seats.reduce((max, current) => (current.seats > max.seats ? current : max), data.seats[0])
+    : null;
 
   return (
     <div className="max-w-5xl mx-auto space-y-8">
@@ -249,6 +254,30 @@ export default function ElectionResults() {
           </div>
         </motion.div>
       </div>
+
+      {/* Winner Banner */}
+      {winner && winner.seats > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          key={`winner-${selectedYear}-${selectedState}`}
+          className="mt-8 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-[2rem] p-8 border border-emerald-100 dark:border-emerald-500/20 flex flex-col sm:flex-row items-center gap-6 shadow-sm"
+        >
+          <div className="bg-emerald-100 dark:bg-emerald-800/50 p-4 rounded-2xl shadow-sm shrink-0">
+            <Trophy className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
+          </div>
+          <div>
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+              {selectedState === 'All India' ? 'National Winner' : `${selectedState} Winner`} ({selectedYear})
+            </h4>
+            <p className="text-slate-700 dark:text-slate-300 text-lg">
+              <span className="font-extrabold text-emerald-600 dark:text-emerald-400 text-2xl mr-2">{winner.party}</span> 
+              secured the majority with <span className="font-bold">{winner.seats} seats</span>.
+            </p>
+          </div>
+        </motion.div>
+      )}
 
     </div>
   );
