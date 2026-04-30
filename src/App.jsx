@@ -12,6 +12,7 @@ import RegisterPage from './pages/Register';
 import BoothPage from './pages/Booth';
 import GuidelinesPage from './pages/Guidelines';
 import ElectionResultsPage from './pages/ElectionResults';
+import DownloadEpicPage from './pages/DownloadEpic';
 
 // Helper component to add smooth page transitions
 export const PageTransition = ({ children }) => (
@@ -257,6 +258,7 @@ export default function App() {
           <Route path="/booth" element={<PageTransition><BoothPage /></PageTransition>} />
           <Route path="/guidelines" element={<PageTransition><GuidelinesPage /></PageTransition>} />
           <Route path="/results" element={<PageTransition><ElectionResultsPage /></PageTransition>} />
+          <Route path="/download-epic" element={<PageTransition><DownloadEpicPage /></PageTransition>} />
         </Routes>
       </Layout>
     </Router>
