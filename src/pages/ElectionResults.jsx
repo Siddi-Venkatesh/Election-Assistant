@@ -262,7 +262,7 @@ export default function ElectionResults() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           key={`winner-${selectedYear}-${selectedState}`}
-          className="mt-8 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-[2rem] p-8 border border-emerald-100 dark:border-emerald-500/20 flex flex-col sm:flex-row items-center gap-6 shadow-sm"
+          className="mt-8 mx-auto max-w-3xl justify-center bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-[2rem] p-8 border border-emerald-100 dark:border-emerald-500/20 flex flex-col sm:flex-row items-center gap-6 shadow-sm"
         >
           <div className="bg-emerald-100 dark:bg-emerald-800/50 p-4 rounded-2xl shadow-sm shrink-0">
             <Trophy className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
