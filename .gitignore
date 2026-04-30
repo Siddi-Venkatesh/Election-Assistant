@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+.DS_Store
+
+# Backend / Python
+backend/venv/
+backend/__pycache__/
+*.pyc
+*.sqlite3
+backend/database.db
+
+# Environment variables (SECURITY)
+.env
+backend/.env
