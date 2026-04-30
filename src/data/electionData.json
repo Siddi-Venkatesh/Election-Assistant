@@ -1,0 +1,3290 @@
+{
+  "2024": {
+    "All India": {
+      "seats": [
+        {
+          "party": "NDA",
+          "seats": 293
+        },
+        {
+          "party": "INDIA",
+          "seats": 234
+        },
+        {
+          "party": "Others",
+          "seats": 16
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDA",
+          "value": 42.5
+        },
+        {
+          "name": "INDIA",
+          "value": 40.6
+        },
+        {
+          "name": "Others",
+          "value": 16.9
+        }
+      ]
+    },
+    "Andhra Pradesh": {
+      "seats": [
+        {
+          "party": "TDP",
+          "seats": 16
+        },
+        {
+          "party": "YSRCP",
+          "seats": 4
+        },
+        {
+          "party": "JSP",
+          "seats": 2
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "TDP",
+          "value": 37.8
+        },
+        {
+          "name": "YSRCP",
+          "value": 39.6
+        },
+        {
+          "name": "JSP",
+          "value": 11.3
+        },
+        {
+          "name": "BJP",
+          "value": 11.3
+        }
+      ]
+    },
+    "Arunachal Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 9
+        },
+        {
+          "party": "INC",
+          "seats": 12
+        },
+        {
+          "party": "NPEP",
+          "seats": 9
+        },
+        {
+          "party": "PPA",
+          "seats": 6
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 46.2
+        },
+        {
+          "name": "INC",
+          "value": 34.8
+        },
+        {
+          "name": "NPEP",
+          "value": 13.2
+        },
+        {
+          "name": "PPA",
+          "value": 5.9
+        }
+      ]
+    },
+    "Assam": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 9
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "AIUDF",
+          "seats": 0
+        },
+        {
+          "party": "AGP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 35.9
+        },
+        {
+          "name": "INC",
+          "value": 27.8
+        },
+        {
+          "name": "AIUDF",
+          "value": 17.7
+        },
+        {
+          "name": "AGP",
+          "value": 18.6
+        }
+      ]
+    },
+    "Bihar": {
+      "seats": [
+        {
+          "party": "RJD",
+          "seats": 24
+        },
+        {
+          "party": "JDU",
+          "seats": 2
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "LJP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "RJD",
+          "value": 40.9
+        },
+        {
+          "name": "JDU",
+          "value": 30.2
+        },
+        {
+          "name": "BJP",
+          "value": 12.2
+        },
+        {
+          "name": "LJP",
+          "value": 16.7
+        }
+      ]
+    },
+    "Chhattisgarh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 19
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        },
+        {
+          "party": "JCC",
+          "seats": 0
+        },
+        {
+          "party": "BSP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 46.4
+        },
+        {
+          "name": "BJP",
+          "value": 25.9
+        },
+        {
+          "name": "JCC",
+          "value": 11.3
+        },
+        {
+          "name": "BSP",
+          "value": 16.4
+        }
+      ]
+    },
+    "Goa": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 6
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "MGP",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 41.3
+        },
+        {
+          "name": "INC",
+          "value": 36.6
+        },
+        {
+          "name": "MGP",
+          "value": 19.8
+        },
+        {
+          "name": "AAP",
+          "value": 2.3
+        }
+      ]
+    },
+    "Gujarat": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 14
+        },
+        {
+          "party": "INC",
+          "seats": 4
+        },
+        {
+          "party": "AAP",
+          "seats": 0
+        },
+        {
+          "party": "BTP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 35.1
+        },
+        {
+          "name": "INC",
+          "value": 33.8
+        },
+        {
+          "name": "AAP",
+          "value": 17.6
+        },
+        {
+          "name": "BTP",
+          "value": 13.4
+        }
+      ]
+    },
+    "Haryana": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 16
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "JJP",
+          "seats": 0
+        },
+        {
+          "party": "INLD",
+          "seats": 5
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 39.8
+        },
+        {
+          "name": "INC",
+          "value": 34.9
+        },
+        {
+          "name": "JJP",
+          "value": 18.9
+        },
+        {
+          "name": "INLD",
+          "value": 6.4
+        }
+      ]
+    },
+    "Himachal Pradesh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 7
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "CPIM",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 38.1
+        },
+        {
+          "name": "BJP",
+          "value": 40.2
+        },
+        {
+          "name": "CPIM",
+          "value": 17.8
+        },
+        {
+          "name": "AAP",
+          "value": 4.0
+        }
+      ]
+    },
+    "Jharkhand": {
+      "seats": [
+        {
+          "party": "JMM",
+          "seats": 32
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "AJSU",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "JMM",
+          "value": 46.7
+        },
+        {
+          "name": "BJP",
+          "value": 42.4
+        },
+        {
+          "name": "INC",
+          "value": 17.1
+        },
+        {
+          "name": "AJSU",
+          "value": 0
+        }
+      ]
+    },
+    "Karnataka": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "BJP",
+          "seats": 2
+        },
+        {
+          "party": "JDS",
+          "seats": 0
+        },
+        {
+          "party": "KRPP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 39.8
+        },
+        {
+          "name": "BJP",
+          "value": 25.4
+        },
+        {
+          "name": "JDS",
+          "value": 10.5
+        },
+        {
+          "name": "KRPP",
+          "value": 24.3
+        }
+      ]
+    },
+    "Kerala": {
+      "seats": [
+        {
+          "party": "CPI(M)",
+          "seats": 5
+        },
+        {
+          "party": "INC",
+          "seats": 23
+        },
+        {
+          "party": "IUML",
+          "seats": 7
+        },
+        {
+          "party": "CPI",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "CPI(M)",
+          "value": 43.8
+        },
+        {
+          "name": "INC",
+          "value": 42.0
+        },
+        {
+          "name": "IUML",
+          "value": 10.1
+        },
+        {
+          "name": "CPI",
+          "value": 4.1
+        }
+      ]
+    },
+    "Madhya Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 25
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "BSP",
+          "seats": 0
+        },
+        {
+          "party": "SP",
+          "seats": 7
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 31.4
+        },
+        {
+          "name": "INC",
+          "value": 37.6
+        },
+        {
+          "name": "BSP",
+          "value": 17.4
+        },
+        {
+          "name": "SP",
+          "value": 13.6
+        }
+      ]
+    },
+    "Maharashtra": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "SHS",
+          "seats": 1
+        },
+        {
+          "party": "NCP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 48.2
+        },
+        {
+          "name": "SHS",
+          "value": 33.4
+        },
+        {
+          "name": "NCP",
+          "value": 17.9
+        },
+        {
+          "name": "INC",
+          "value": 0.5
+        }
+      ]
+    },
+    "Manipur": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 33
+        },
+        {
+          "party": "NPEP",
+          "seats": 0
+        },
+        {
+          "party": "NPF",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 39.9
+        },
+        {
+          "name": "INC",
+          "value": 34.1
+        },
+        {
+          "name": "NPEP",
+          "value": 17.3
+        },
+        {
+          "name": "NPF",
+          "value": 8.8
+        }
+      ]
+    },
+    "Meghalaya": {
+      "seats": [
+        {
+          "party": "NPEP",
+          "seats": 3
+        },
+        {
+          "party": "INC",
+          "seats": 26
+        },
+        {
+          "party": "UDP",
+          "seats": 2
+        },
+        {
+          "party": "TMC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NPEP",
+          "value": 35.8
+        },
+        {
+          "name": "INC",
+          "value": 47.8
+        },
+        {
+          "name": "UDP",
+          "value": 17.9
+        },
+        {
+          "name": "TMC",
+          "value": 0
+        }
+      ]
+    },
+    "Mizoram": {
+      "seats": [
+        {
+          "party": "MNF",
+          "seats": 10
+        },
+        {
+          "party": "ZPM",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "BJP",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "MNF",
+          "value": 49.2
+        },
+        {
+          "name": "ZPM",
+          "value": 26.9
+        },
+        {
+          "name": "INC",
+          "value": 12.4
+        },
+        {
+          "name": "BJP",
+          "value": 11.5
+        }
+      ]
+    },
+    "Nagaland": {
+      "seats": [
+        {
+          "party": "NDPP",
+          "seats": 2
+        },
+        {
+          "party": "NPF",
+          "seats": 9
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDPP",
+          "value": 25.2
+        },
+        {
+          "name": "NPF",
+          "value": 43.6
+        },
+        {
+          "name": "BJP",
+          "value": 12.1
+        },
+        {
+          "name": "INC",
+          "value": 19.1
+        }
+      ]
+    },
+    "Odisha": {
+      "seats": [
+        {
+          "party": "BJD",
+          "seats": 23
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "CPI",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJD",
+          "value": 28.4
+        },
+        {
+          "name": "BJP",
+          "value": 38.8
+        },
+        {
+          "name": "INC",
+          "value": 15.3
+        },
+        {
+          "name": "CPI",
+          "value": 17.6
+        }
+      ]
+    },
+    "Punjab": {
+      "seats": [
+        {
+          "party": "AAP",
+          "seats": 8
+        },
+        {
+          "party": "INC",
+          "seats": 4
+        },
+        {
+          "party": "SAD",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "AAP",
+          "value": 44.7
+        },
+        {
+          "name": "INC",
+          "value": 37.2
+        },
+        {
+          "name": "SAD",
+          "value": 11.1
+        },
+        {
+          "name": "BJP",
+          "value": 7.0
+        }
+      ]
+    },
+    "Rajasthan": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 18
+        },
+        {
+          "party": "RLP",
+          "seats": 3
+        },
+        {
+          "party": "BSP",
+          "seats": 6
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 44.7
+        },
+        {
+          "name": "INC",
+          "value": 36.6
+        },
+        {
+          "name": "RLP",
+          "value": 15.7
+        },
+        {
+          "name": "BSP",
+          "value": 3.0
+        }
+      ]
+    },
+    "Sikkim": {
+      "seats": [
+        {
+          "party": "SKM",
+          "seats": 4
+        },
+        {
+          "party": "SDF",
+          "seats": 14
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "SKM",
+          "value": 32.9
+        },
+        {
+          "name": "SDF",
+          "value": 34.4
+        },
+        {
+          "name": "BJP",
+          "value": 17.3
+        },
+        {
+          "name": "INC",
+          "value": 15.3
+        }
+      ]
+    },
+    "Tamil Nadu": {
+      "seats": [
+        {
+          "party": "DMK",
+          "seats": 17
+        },
+        {
+          "party": "AIADMK",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "DMK",
+          "value": 43.7
+        },
+        {
+          "name": "AIADMK",
+          "value": 41.1
+        },
+        {
+          "name": "INC",
+          "value": 18.4
+        },
+        {
+          "name": "BJP",
+          "value": 0
+        }
+      ]
+    },
+    "Telangana": {
+      "seats": [
+        {
+          "party": "BRS",
+          "seats": 16
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "AIMIM",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BRS",
+          "value": 46.3
+        },
+        {
+          "name": "INC",
+          "value": 42.1
+        },
+        {
+          "name": "BJP",
+          "value": 18.5
+        },
+        {
+          "name": "AIMIM",
+          "value": 0
+        }
+      ]
+    },
+    "Tripura": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 16
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "TIPRA",
+          "seats": 1
+        },
+        {
+          "party": "CPIM",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 38.1
+        },
+        {
+          "name": "INC",
+          "value": 47.8
+        },
+        {
+          "name": "TIPRA",
+          "value": 16.5
+        },
+        {
+          "name": "CPIM",
+          "value": 0
+        }
+      ]
+    },
+    "Uttar Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 31
+        },
+        {
+          "party": "SP",
+          "seats": 7
+        },
+        {
+          "party": "BSP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 30.5
+        },
+        {
+          "name": "SP",
+          "value": 27.2
+        },
+        {
+          "name": "BSP",
+          "value": 17.9
+        },
+        {
+          "name": "INC",
+          "value": 24.4
+        }
+      ]
+    },
+    "Uttarakhand": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 9
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "BSP",
+          "seats": 1
+        },
+        {
+          "party": "UKD",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 25.3
+        },
+        {
+          "name": "INC",
+          "value": 39.2
+        },
+        {
+          "name": "BSP",
+          "value": 16.0
+        },
+        {
+          "name": "UKD",
+          "value": 19.5
+        }
+      ]
+    },
+    "West Bengal": {
+      "seats": [
+        {
+          "party": "TMC",
+          "seats": 7
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "CPIM",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "TMC",
+          "value": 28.9
+        },
+        {
+          "name": "BJP",
+          "value": 29.1
+        },
+        {
+          "name": "INC",
+          "value": 17.0
+        },
+        {
+          "name": "CPIM",
+          "value": 25.0
+        }
+      ]
+    }
+  },
+  "2019": {
+    "All India": {
+      "seats": [
+        {
+          "party": "NDA",
+          "seats": 353
+        },
+        {
+          "party": "UPA",
+          "seats": 91
+        },
+        {
+          "party": "Others",
+          "seats": 98
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDA",
+          "value": 45.0
+        },
+        {
+          "name": "UPA",
+          "value": 26.0
+        },
+        {
+          "name": "Others",
+          "value": 29.0
+        }
+      ]
+    },
+    "Andhra Pradesh": {
+      "seats": [
+        {
+          "party": "YSRCP",
+          "seats": 22
+        },
+        {
+          "party": "TDP",
+          "seats": 3
+        },
+        {
+          "party": "JSP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "YSRCP",
+          "value": 49.1
+        },
+        {
+          "name": "TDP",
+          "value": 39.6
+        },
+        {
+          "name": "JSP",
+          "value": 5.9
+        },
+        {
+          "name": "INC",
+          "value": 1.3
+        }
+      ]
+    },
+    "Arunachal Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 20
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "NPEP",
+          "seats": 0
+        },
+        {
+          "party": "PPA",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 42.6
+        },
+        {
+          "name": "INC",
+          "value": 43.5
+        },
+        {
+          "name": "NPEP",
+          "value": 16.3
+        },
+        {
+          "name": "PPA",
+          "value": 0
+        }
+      ]
+    },
+    "Assam": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 2
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "AIUDF",
+          "seats": 1
+        },
+        {
+          "party": "AGP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 32.5
+        },
+        {
+          "name": "INC",
+          "value": 49.4
+        },
+        {
+          "name": "AIUDF",
+          "value": 14.8
+        },
+        {
+          "name": "AGP",
+          "value": 3.3
+        }
+      ]
+    },
+    "Bihar": {
+      "seats": [
+        {
+          "party": "RJD",
+          "seats": 11
+        },
+        {
+          "party": "JDU",
+          "seats": 1
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "LJP",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "RJD",
+          "value": 38.5
+        },
+        {
+          "name": "JDU",
+          "value": 26.3
+        },
+        {
+          "name": "BJP",
+          "value": 15.4
+        },
+        {
+          "name": "LJP",
+          "value": 19.7
+        }
+      ]
+    },
+    "Chhattisgarh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 4
+        },
+        {
+          "party": "BJP",
+          "seats": 11
+        },
+        {
+          "party": "JCC",
+          "seats": 2
+        },
+        {
+          "party": "BSP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 42.4
+        },
+        {
+          "name": "BJP",
+          "value": 26.4
+        },
+        {
+          "name": "JCC",
+          "value": 15.2
+        },
+        {
+          "name": "BSP",
+          "value": 15.9
+        }
+      ]
+    },
+    "Goa": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 7
+        },
+        {
+          "party": "MGP",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 42.1
+        },
+        {
+          "name": "INC",
+          "value": 47.9
+        },
+        {
+          "name": "MGP",
+          "value": 18.7
+        },
+        {
+          "name": "AAP",
+          "value": 0
+        }
+      ]
+    },
+    "Gujarat": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 27
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "AAP",
+          "seats": 7
+        },
+        {
+          "party": "BTP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 34.7
+        },
+        {
+          "name": "INC",
+          "value": 32.7
+        },
+        {
+          "name": "AAP",
+          "value": 12.2
+        },
+        {
+          "name": "BTP",
+          "value": 20.5
+        }
+      ]
+    },
+    "Haryana": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 9
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "JJP",
+          "seats": 6
+        },
+        {
+          "party": "INLD",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 39.2
+        },
+        {
+          "name": "INC",
+          "value": 30.4
+        },
+        {
+          "name": "JJP",
+          "value": 19.0
+        },
+        {
+          "name": "INLD",
+          "value": 11.3
+        }
+      ]
+    },
+    "Himachal Pradesh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 19
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "CPIM",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 45.3
+        },
+        {
+          "name": "BJP",
+          "value": 44.7
+        },
+        {
+          "name": "CPIM",
+          "value": 15.5
+        },
+        {
+          "name": "AAP",
+          "value": 0
+        }
+      ]
+    },
+    "Jharkhand": {
+      "seats": [
+        {
+          "party": "JMM",
+          "seats": 2
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 2
+        },
+        {
+          "party": "AJSU",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "JMM",
+          "value": 31.7
+        },
+        {
+          "name": "BJP",
+          "value": 27.0
+        },
+        {
+          "name": "INC",
+          "value": 10.3
+        },
+        {
+          "name": "AJSU",
+          "value": 31.0
+        }
+      ]
+    },
+    "Karnataka": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "BJP",
+          "seats": 4
+        },
+        {
+          "party": "JDS",
+          "seats": 0
+        },
+        {
+          "party": "KRPP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 38.1
+        },
+        {
+          "name": "BJP",
+          "value": 27.1
+        },
+        {
+          "name": "JDS",
+          "value": 15.2
+        },
+        {
+          "name": "KRPP",
+          "value": 19.7
+        }
+      ]
+    },
+    "Kerala": {
+      "seats": [
+        {
+          "party": "CPI(M)",
+          "seats": 8
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "IUML",
+          "seats": 0
+        },
+        {
+          "party": "CPI",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "CPI(M)",
+          "value": 43.2
+        },
+        {
+          "name": "INC",
+          "value": 42.6
+        },
+        {
+          "name": "IUML",
+          "value": 19.5
+        },
+        {
+          "name": "CPI",
+          "value": 0
+        }
+      ]
+    },
+    "Madhya Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 33
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BSP",
+          "seats": 4
+        },
+        {
+          "party": "SP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 30.6
+        },
+        {
+          "name": "INC",
+          "value": 42.3
+        },
+        {
+          "name": "BSP",
+          "value": 13.2
+        },
+        {
+          "name": "SP",
+          "value": 13.9
+        }
+      ]
+    },
+    "Maharashtra": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 26
+        },
+        {
+          "party": "SHS",
+          "seats": 4
+        },
+        {
+          "party": "NCP",
+          "seats": 7
+        },
+        {
+          "party": "INC",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 47.0
+        },
+        {
+          "name": "SHS",
+          "value": 30.1
+        },
+        {
+          "name": "NCP",
+          "value": 10.5
+        },
+        {
+          "name": "INC",
+          "value": 12.4
+        }
+      ]
+    },
+    "Manipur": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 10
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "NPEP",
+          "seats": 0
+        },
+        {
+          "party": "NPF",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 29.9
+        },
+        {
+          "name": "INC",
+          "value": 49.7
+        },
+        {
+          "name": "NPEP",
+          "value": 13.3
+        },
+        {
+          "name": "NPF",
+          "value": 7.2
+        }
+      ]
+    },
+    "Meghalaya": {
+      "seats": [
+        {
+          "party": "NPEP",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "UDP",
+          "seats": 2
+        },
+        {
+          "party": "TMC",
+          "seats": 9
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NPEP",
+          "value": 40.2
+        },
+        {
+          "name": "INC",
+          "value": 31.7
+        },
+        {
+          "name": "UDP",
+          "value": 14.3
+        },
+        {
+          "name": "TMC",
+          "value": 13.8
+        }
+      ]
+    },
+    "Mizoram": {
+      "seats": [
+        {
+          "party": "MNF",
+          "seats": 1
+        },
+        {
+          "party": "ZPM",
+          "seats": 13
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "BJP",
+          "seats": 5
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "MNF",
+          "value": 49.7
+        },
+        {
+          "name": "ZPM",
+          "value": 32.9
+        },
+        {
+          "name": "INC",
+          "value": 18.7
+        },
+        {
+          "name": "BJP",
+          "value": 0
+        }
+      ]
+    },
+    "Nagaland": {
+      "seats": [
+        {
+          "party": "NDPP",
+          "seats": 23
+        },
+        {
+          "party": "NPF",
+          "seats": 1
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDPP",
+          "value": 38.6
+        },
+        {
+          "name": "NPF",
+          "value": 37.8
+        },
+        {
+          "name": "BJP",
+          "value": 10.5
+        },
+        {
+          "name": "INC",
+          "value": 13.2
+        }
+      ]
+    },
+    "Odisha": {
+      "seats": [
+        {
+          "party": "BJD",
+          "seats": 2
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        },
+        {
+          "party": "INC",
+          "seats": 2
+        },
+        {
+          "party": "CPI",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJD",
+          "value": 35.4
+        },
+        {
+          "name": "BJP",
+          "value": 42.8
+        },
+        {
+          "name": "INC",
+          "value": 12.0
+        },
+        {
+          "name": "CPI",
+          "value": 9.8
+        }
+      ]
+    },
+    "Punjab": {
+      "seats": [
+        {
+          "party": "AAP",
+          "seats": 17
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "SAD",
+          "seats": 1
+        },
+        {
+          "party": "BJP",
+          "seats": 5
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "AAP",
+          "value": 29.8
+        },
+        {
+          "name": "INC",
+          "value": 33.4
+        },
+        {
+          "name": "SAD",
+          "value": 17.6
+        },
+        {
+          "name": "BJP",
+          "value": 19.1
+        }
+      ]
+    },
+    "Rajasthan": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 13
+        },
+        {
+          "party": "INC",
+          "seats": 5
+        },
+        {
+          "party": "RLP",
+          "seats": 3
+        },
+        {
+          "party": "BSP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 40.5
+        },
+        {
+          "name": "INC",
+          "value": 35.0
+        },
+        {
+          "name": "RLP",
+          "value": 14.1
+        },
+        {
+          "name": "BSP",
+          "value": 10.4
+        }
+      ]
+    },
+    "Sikkim": {
+      "seats": [
+        {
+          "party": "SKM",
+          "seats": 1
+        },
+        {
+          "party": "SDF",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "SKM",
+          "value": 25.6
+        },
+        {
+          "name": "SDF",
+          "value": 31.1
+        },
+        {
+          "name": "BJP",
+          "value": 11.6
+        },
+        {
+          "name": "INC",
+          "value": 31.8
+        }
+      ]
+    },
+    "Tamil Nadu": {
+      "seats": [
+        {
+          "party": "DMK",
+          "seats": 1
+        },
+        {
+          "party": "AIADMK",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "BJP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "DMK",
+          "value": 32.2
+        },
+        {
+          "name": "AIADMK",
+          "value": 41.4
+        },
+        {
+          "name": "INC",
+          "value": 10.8
+        },
+        {
+          "name": "BJP",
+          "value": 15.5
+        }
+      ]
+    },
+    "Telangana": {
+      "seats": [
+        {
+          "party": "BRS",
+          "seats": 5
+        },
+        {
+          "party": "INC",
+          "seats": 5
+        },
+        {
+          "party": "BJP",
+          "seats": 16
+        },
+        {
+          "party": "AIMIM",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BRS",
+          "value": 25.8
+        },
+        {
+          "name": "INC",
+          "value": 49.9
+        },
+        {
+          "name": "BJP",
+          "value": 10.1
+        },
+        {
+          "name": "AIMIM",
+          "value": 14.2
+        }
+      ]
+    },
+    "Tripura": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "TIPRA",
+          "seats": 5
+        },
+        {
+          "party": "CPIM",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 25.8
+        },
+        {
+          "name": "INC",
+          "value": 25.5
+        },
+        {
+          "name": "TIPRA",
+          "value": 18.3
+        },
+        {
+          "name": "CPIM",
+          "value": 30.3
+        }
+      ]
+    },
+    "Uttar Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "SP",
+          "seats": 14
+        },
+        {
+          "party": "BSP",
+          "seats": 2
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 28.0
+        },
+        {
+          "name": "SP",
+          "value": 31.4
+        },
+        {
+          "name": "BSP",
+          "value": 13.2
+        },
+        {
+          "name": "INC",
+          "value": 27.3
+        }
+      ]
+    },
+    "Uttarakhand": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BSP",
+          "seats": 2
+        },
+        {
+          "party": "UKD",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 28.2
+        },
+        {
+          "name": "INC",
+          "value": 29.2
+        },
+        {
+          "name": "BSP",
+          "value": 17.2
+        },
+        {
+          "name": "UKD",
+          "value": 25.4
+        }
+      ]
+    },
+    "West Bengal": {
+      "seats": [
+        {
+          "party": "TMC",
+          "seats": 19
+        },
+        {
+          "party": "BJP",
+          "seats": 6
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "CPIM",
+          "seats": 7
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "TMC",
+          "value": 25.3
+        },
+        {
+          "name": "BJP",
+          "value": 36.5
+        },
+        {
+          "name": "INC",
+          "value": 16.7
+        },
+        {
+          "name": "CPIM",
+          "value": 21.5
+        }
+      ]
+    }
+  },
+  "2014": {
+    "All India": {
+      "seats": [
+        {
+          "party": "NDA",
+          "seats": 336
+        },
+        {
+          "party": "UPA",
+          "seats": 60
+        },
+        {
+          "party": "Others",
+          "seats": 147
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDA",
+          "value": 38.5
+        },
+        {
+          "name": "UPA",
+          "value": 23.0
+        },
+        {
+          "name": "Others",
+          "value": 38.5
+        }
+      ]
+    },
+    "Andhra Pradesh": {
+      "seats": [
+        {
+          "party": "TDP",
+          "seats": 15
+        },
+        {
+          "party": "YSRCP",
+          "seats": 8
+        },
+        {
+          "party": "BJP",
+          "seats": 2
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "TDP",
+          "value": 40.5
+        },
+        {
+          "name": "YSRCP",
+          "value": 45.4
+        },
+        {
+          "name": "BJP",
+          "value": 7.2
+        },
+        {
+          "name": "INC",
+          "value": 2.8
+        }
+      ]
+    },
+    "Arunachal Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 16
+        },
+        {
+          "party": "INC",
+          "seats": 3
+        },
+        {
+          "party": "NPEP",
+          "seats": 2
+        },
+        {
+          "party": "PPA",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 40.6
+        },
+        {
+          "name": "INC",
+          "value": 40.7
+        },
+        {
+          "name": "NPEP",
+          "value": 17.8
+        },
+        {
+          "name": "PPA",
+          "value": 0.8
+        }
+      ]
+    },
+    "Assam": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "AIUDF",
+          "seats": 0
+        },
+        {
+          "party": "AGP",
+          "seats": 6
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 38.0
+        },
+        {
+          "name": "INC",
+          "value": 26.8
+        },
+        {
+          "name": "AIUDF",
+          "value": 13.6
+        },
+        {
+          "name": "AGP",
+          "value": 21.6
+        }
+      ]
+    },
+    "Bihar": {
+      "seats": [
+        {
+          "party": "RJD",
+          "seats": 0
+        },
+        {
+          "party": "JDU",
+          "seats": 5
+        },
+        {
+          "party": "BJP",
+          "seats": 5
+        },
+        {
+          "party": "LJP",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "RJD",
+          "value": 46.1
+        },
+        {
+          "name": "JDU",
+          "value": 33.1
+        },
+        {
+          "name": "BJP",
+          "value": 16.9
+        },
+        {
+          "name": "LJP",
+          "value": 3.9
+        }
+      ]
+    },
+    "Chhattisgarh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "JCC",
+          "seats": 1
+        },
+        {
+          "party": "BSP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 29.2
+        },
+        {
+          "name": "BJP",
+          "value": 35.7
+        },
+        {
+          "name": "JCC",
+          "value": 12.5
+        },
+        {
+          "name": "BSP",
+          "value": 22.6
+        }
+      ]
+    },
+    "Goa": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 2
+        },
+        {
+          "party": "INC",
+          "seats": 2
+        },
+        {
+          "party": "MGP",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 36.8
+        },
+        {
+          "name": "INC",
+          "value": 28.2
+        },
+        {
+          "name": "MGP",
+          "value": 11.9
+        },
+        {
+          "name": "AAP",
+          "value": 23.1
+        }
+      ]
+    },
+    "Gujarat": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 13
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "AAP",
+          "seats": 7
+        },
+        {
+          "party": "BTP",
+          "seats": 9
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 35.5
+        },
+        {
+          "name": "INC",
+          "value": 49.5
+        },
+        {
+          "name": "AAP",
+          "value": 16.9
+        },
+        {
+          "name": "BTP",
+          "value": 0
+        }
+      ]
+    },
+    "Haryana": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 11
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "JJP",
+          "seats": 11
+        },
+        {
+          "party": "INLD",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 38.3
+        },
+        {
+          "name": "INC",
+          "value": 35.3
+        },
+        {
+          "name": "JJP",
+          "value": 15.1
+        },
+        {
+          "name": "INLD",
+          "value": 11.3
+        }
+      ]
+    },
+    "Himachal Pradesh": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 4
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "CPIM",
+          "seats": 0
+        },
+        {
+          "party": "AAP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 39.7
+        },
+        {
+          "name": "BJP",
+          "value": 36.0
+        },
+        {
+          "name": "CPIM",
+          "value": 19.9
+        },
+        {
+          "name": "AAP",
+          "value": 4.4
+        }
+      ]
+    },
+    "Jharkhand": {
+      "seats": [
+        {
+          "party": "JMM",
+          "seats": 9
+        },
+        {
+          "party": "BJP",
+          "seats": 5
+        },
+        {
+          "party": "INC",
+          "seats": 11
+        },
+        {
+          "party": "AJSU",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "JMM",
+          "value": 40.1
+        },
+        {
+          "name": "BJP",
+          "value": 26.3
+        },
+        {
+          "name": "INC",
+          "value": 13.5
+        },
+        {
+          "name": "AJSU",
+          "value": 20.1
+        }
+      ]
+    },
+    "Karnataka": {
+      "seats": [
+        {
+          "party": "INC",
+          "seats": 20
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "JDS",
+          "seats": 0
+        },
+        {
+          "party": "KRPP",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "INC",
+          "value": 33.1
+        },
+        {
+          "name": "BJP",
+          "value": 25.9
+        },
+        {
+          "name": "JDS",
+          "value": 12.6
+        },
+        {
+          "name": "KRPP",
+          "value": 28.4
+        }
+      ]
+    },
+    "Kerala": {
+      "seats": [
+        {
+          "party": "CPI(M)",
+          "seats": 15
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "IUML",
+          "seats": 11
+        },
+        {
+          "party": "CPI",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "CPI(M)",
+          "value": 45.2
+        },
+        {
+          "name": "INC",
+          "value": 30.0
+        },
+        {
+          "name": "IUML",
+          "value": 17.2
+        },
+        {
+          "name": "CPI",
+          "value": 7.6
+        }
+      ]
+    },
+    "Madhya Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 5
+        },
+        {
+          "party": "INC",
+          "seats": 17
+        },
+        {
+          "party": "BSP",
+          "seats": 0
+        },
+        {
+          "party": "SP",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 25.3
+        },
+        {
+          "name": "INC",
+          "value": 49.0
+        },
+        {
+          "name": "BSP",
+          "value": 18.8
+        },
+        {
+          "name": "SP",
+          "value": 6.9
+        }
+      ]
+    },
+    "Maharashtra": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 22
+        },
+        {
+          "party": "SHS",
+          "seats": 4
+        },
+        {
+          "party": "NCP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 47.6
+        },
+        {
+          "name": "SHS",
+          "value": 49.9
+        },
+        {
+          "name": "NCP",
+          "value": 16.9
+        },
+        {
+          "name": "INC",
+          "value": 0
+        }
+      ]
+    },
+    "Manipur": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 4
+        },
+        {
+          "party": "INC",
+          "seats": 25
+        },
+        {
+          "party": "NPEP",
+          "seats": 0
+        },
+        {
+          "party": "NPF",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 27.0
+        },
+        {
+          "name": "INC",
+          "value": 31.8
+        },
+        {
+          "name": "NPEP",
+          "value": 17.2
+        },
+        {
+          "name": "NPF",
+          "value": 24.0
+        }
+      ]
+    },
+    "Meghalaya": {
+      "seats": [
+        {
+          "party": "NPEP",
+          "seats": 11
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "UDP",
+          "seats": 0
+        },
+        {
+          "party": "TMC",
+          "seats": 2
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NPEP",
+          "value": 40.1
+        },
+        {
+          "name": "INC",
+          "value": 33.3
+        },
+        {
+          "name": "UDP",
+          "value": 12.7
+        },
+        {
+          "name": "TMC",
+          "value": 13.9
+        }
+      ]
+    },
+    "Mizoram": {
+      "seats": [
+        {
+          "party": "MNF",
+          "seats": 13
+        },
+        {
+          "party": "ZPM",
+          "seats": 5
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 6
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "MNF",
+          "value": 44.0
+        },
+        {
+          "name": "ZPM",
+          "value": 39.4
+        },
+        {
+          "name": "INC",
+          "value": 10.6
+        },
+        {
+          "name": "BJP",
+          "value": 6.0
+        }
+      ]
+    },
+    "Nagaland": {
+      "seats": [
+        {
+          "party": "NDPP",
+          "seats": 26
+        },
+        {
+          "party": "NPF",
+          "seats": 2
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "NDPP",
+          "value": 25.2
+        },
+        {
+          "name": "NPF",
+          "value": 41.4
+        },
+        {
+          "name": "BJP",
+          "value": 18.6
+        },
+        {
+          "name": "INC",
+          "value": 14.8
+        }
+      ]
+    },
+    "Odisha": {
+      "seats": [
+        {
+          "party": "BJD",
+          "seats": 10
+        },
+        {
+          "party": "BJP",
+          "seats": 18
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        },
+        {
+          "party": "CPI",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJD",
+          "value": 42.5
+        },
+        {
+          "name": "BJP",
+          "value": 28.2
+        },
+        {
+          "name": "INC",
+          "value": 12.5
+        },
+        {
+          "name": "CPI",
+          "value": 16.9
+        }
+      ]
+    },
+    "Punjab": {
+      "seats": [
+        {
+          "party": "AAP",
+          "seats": 20
+        },
+        {
+          "party": "INC",
+          "seats": 6
+        },
+        {
+          "party": "SAD",
+          "seats": 1
+        },
+        {
+          "party": "BJP",
+          "seats": 7
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "AAP",
+          "value": 42.8
+        },
+        {
+          "name": "INC",
+          "value": 37.9
+        },
+        {
+          "name": "SAD",
+          "value": 17.6
+        },
+        {
+          "name": "BJP",
+          "value": 1.7
+        }
+      ]
+    },
+    "Rajasthan": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 2
+        },
+        {
+          "party": "RLP",
+          "seats": 0
+        },
+        {
+          "party": "BSP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 35.6
+        },
+        {
+          "name": "INC",
+          "value": 38.4
+        },
+        {
+          "name": "RLP",
+          "value": 16.1
+        },
+        {
+          "name": "BSP",
+          "value": 9.9
+        }
+      ]
+    },
+    "Sikkim": {
+      "seats": [
+        {
+          "party": "SKM",
+          "seats": 30
+        },
+        {
+          "party": "SDF",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "SKM",
+          "value": 42.7
+        },
+        {
+          "name": "SDF",
+          "value": 25.0
+        },
+        {
+          "name": "BJP",
+          "value": 12.9
+        },
+        {
+          "name": "INC",
+          "value": 19.3
+        }
+      ]
+    },
+    "Tamil Nadu": {
+      "seats": [
+        {
+          "party": "DMK",
+          "seats": 2
+        },
+        {
+          "party": "AIADMK",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "DMK",
+          "value": 47.8
+        },
+        {
+          "name": "AIADMK",
+          "value": 26.0
+        },
+        {
+          "name": "INC",
+          "value": 13.1
+        },
+        {
+          "name": "BJP",
+          "value": 13.0
+        }
+      ]
+    },
+    "Telangana": {
+      "seats": [
+        {
+          "party": "BRS",
+          "seats": 3
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BJP",
+          "seats": 0
+        },
+        {
+          "party": "AIMIM",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BRS",
+          "value": 29.6
+        },
+        {
+          "name": "INC",
+          "value": 42.9
+        },
+        {
+          "name": "BJP",
+          "value": 11.9
+        },
+        {
+          "name": "AIMIM",
+          "value": 15.6
+        }
+      ]
+    },
+    "Tripura": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 10
+        },
+        {
+          "party": "INC",
+          "seats": 22
+        },
+        {
+          "party": "TIPRA",
+          "seats": 4
+        },
+        {
+          "party": "CPIM",
+          "seats": 3
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 40.6
+        },
+        {
+          "name": "INC",
+          "value": 27.2
+        },
+        {
+          "name": "TIPRA",
+          "value": 12.1
+        },
+        {
+          "name": "CPIM",
+          "value": 20.1
+        }
+      ]
+    },
+    "Uttar Pradesh": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 10
+        },
+        {
+          "party": "SP",
+          "seats": 6
+        },
+        {
+          "party": "BSP",
+          "seats": 0
+        },
+        {
+          "party": "INC",
+          "seats": 1
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 46.2
+        },
+        {
+          "name": "SP",
+          "value": 38.1
+        },
+        {
+          "name": "BSP",
+          "value": 10.8
+        },
+        {
+          "name": "INC",
+          "value": 4.9
+        }
+      ]
+    },
+    "Uttarakhand": {
+      "seats": [
+        {
+          "party": "BJP",
+          "seats": 12
+        },
+        {
+          "party": "INC",
+          "seats": 0
+        },
+        {
+          "party": "BSP",
+          "seats": 0
+        },
+        {
+          "party": "UKD",
+          "seats": 13
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "BJP",
+          "value": 28.5
+        },
+        {
+          "name": "INC",
+          "value": 27.5
+        },
+        {
+          "name": "BSP",
+          "value": 15.3
+        },
+        {
+          "name": "UKD",
+          "value": 28.7
+        }
+      ]
+    },
+    "West Bengal": {
+      "seats": [
+        {
+          "party": "TMC",
+          "seats": 10
+        },
+        {
+          "party": "BJP",
+          "seats": 1
+        },
+        {
+          "party": "INC",
+          "seats": 4
+        },
+        {
+          "party": "CPIM",
+          "seats": 4
+        }
+      ],
+      "voteShare": [
+        {
+          "name": "TMC",
+          "value": 27.0
+        },
+        {
+          "name": "BJP",
+          "value": 45.0
+        },
+        {
+          "name": "INC",
+          "value": 15.8
+        },
+        {
+          "name": "CPIM",
+          "value": 12.2
+        }
+      ]
+    }
+  }
+}

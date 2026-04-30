@@ -4,114 +4,12 @@ import { BarChart3, Trophy } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
-const ALL_STATES = [
-  'All India',
-  'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
-  'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand',
-  'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
-  'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab',
-  'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
-  'Uttar Pradesh', 'Uttarakhand', 'West Bengal'
-];
+import electionDataRaw from '../data/electionData.json';
 
-// Pre-defined accurate data for key states
-const baseData = {
-  '2024': {
-    'All India': { seats: [{party: 'NDA', seats: 293}, {party: 'INDIA', seats: 234}, {party: 'Others', seats: 16}], voteShare: [{name: 'NDA', value: 42.5}, {name: 'INDIA', value: 40.6}, {name: 'Others', value: 16.9}] },
-    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 16}, {party: 'YSRCP', seats: 4}, {party: 'JSP', seats: 2}, {party: 'BJP', seats: 3}], voteShare: [{name: 'TDP', value: 37.8}, {name: 'YSRCP', value: 39.6}, {name: 'JSP', value: 11.3}, {name: 'BJP', value: 11.3}] }
-  },
-  '2019': {
-    'All India': { seats: [{party: 'NDA', seats: 353}, {party: 'UPA', seats: 91}, {party: 'Others', seats: 98}], voteShare: [{name: 'NDA', value: 45.0}, {name: 'UPA', value: 26.0}, {name: 'Others', value: 29.0}] },
-    'Andhra Pradesh': { seats: [{party: 'YSRCP', seats: 22}, {party: 'TDP', seats: 3}, {party: 'JSP', seats: 0}, {party: 'INC', seats: 0}], voteShare: [{name: 'YSRCP', value: 49.1}, {name: 'TDP', value: 39.6}, {name: 'JSP', value: 5.9}, {name: 'INC', value: 1.3}] }
-  },
-  '2014': {
-    'All India': { seats: [{party: 'NDA', seats: 336}, {party: 'UPA', seats: 60}, {party: 'Others', seats: 147}], voteShare: [{name: 'NDA', value: 38.5}, {name: 'UPA', value: 23.0}, {name: 'Others', value: 38.5}] },
-    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 15}, {party: 'YSRCP', seats: 8}, {party: 'BJP', seats: 2}, {party: 'INC', seats: 0}], voteShare: [{name: 'TDP', value: 40.5}, {name: 'YSRCP', value: 45.4}, {name: 'BJP', value: 7.2}, {name: 'INC', value: 2.8}] }
-  }
-};
+// Ensure 'All India' is at the top of the dropdown list
+const ALL_STATES = ['All India', ...Object.keys(electionDataRaw['2024']).filter(state => state !== 'All India').sort()];
 
-const STATE_PARTIES = {
-  'Arunachal Pradesh': ['BJP', 'INC', 'NPEP', 'PPA'],
-  'Assam': ['BJP', 'INC', 'AIUDF', 'AGP'],
-  'Bihar': ['RJD', 'JDU', 'BJP', 'LJP'],
-  'Chhattisgarh': ['INC', 'BJP', 'JCC', 'BSP'],
-  'Goa': ['BJP', 'INC', 'MGP', 'AAP'],
-  'Gujarat': ['BJP', 'INC', 'AAP', 'BTP'],
-  'Haryana': ['BJP', 'INC', 'JJP', 'INLD'],
-  'Himachal Pradesh': ['INC', 'BJP', 'CPIM', 'AAP'],
-  'Jharkhand': ['JMM', 'BJP', 'INC', 'AJSU'],
-  'Karnataka': ['INC', 'BJP', 'JDS', 'KRPP'],
-  'Kerala': ['CPI(M)', 'INC', 'IUML', 'CPI'],
-  'Madhya Pradesh': ['BJP', 'INC', 'BSP', 'SP'],
-  'Maharashtra': ['BJP', 'SHS', 'NCP', 'INC'],
-  'Manipur': ['BJP', 'INC', 'NPEP', 'NPF'],
-  'Meghalaya': ['NPEP', 'INC', 'UDP', 'TMC'],
-  'Mizoram': ['MNF', 'ZPM', 'INC', 'BJP'],
-  'Nagaland': ['NDPP', 'NPF', 'BJP', 'INC'],
-  'Odisha': ['BJD', 'BJP', 'INC', 'CPI'],
-  'Punjab': ['AAP', 'INC', 'SAD', 'BJP'],
-  'Rajasthan': ['BJP', 'INC', 'RLP', 'BSP'],
-  'Sikkim': ['SKM', 'SDF', 'BJP', 'INC'],
-  'Tamil Nadu': ['DMK', 'AIADMK', 'INC', 'BJP'],
-  'Telangana': ['BRS', 'INC', 'BJP', 'AIMIM'],
-  'Tripura': ['BJP', 'INC', 'TIPRA', 'CPIM'],
-  'Uttar Pradesh': ['BJP', 'SP', 'BSP', 'INC'],
-  'Uttarakhand': ['BJP', 'INC', 'BSP', 'UKD'],
-  'West Bengal': ['TMC', 'BJP', 'INC', 'CPIM']
-};
-
-// Generate stable deterministic mock data for the remaining states
-const generateMockStateData = (stateName, year) => {
-  let hash = 0;
-  const str = stateName + year;
-  for (let i = 0; i < str.length; i++) {
-    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-    hash |= 0;
-  }
-  const random = () => {
-    const x = Math.sin(hash++) * 10000;
-    return x - Math.floor(x);
-  };
-  
-  const totalSeats = 5 + Math.floor(random() * 35); // 5 to 40 seats
-  const parties = STATE_PARTIES[stateName] || ['Party A', 'Party B', 'Party C', 'Others'];
-  const p1Seats = Math.floor(random() * totalSeats);
-  const p2Seats = Math.floor(random() * (totalSeats - p1Seats));
-  const p3Seats = Math.floor(random() * (totalSeats - p1Seats - p2Seats));
-  const p4Seats = totalSeats - p1Seats - p2Seats - p3Seats;
-
-  const p1Vote = 25 + (random() * 25);
-  const p2Vote = 25 + (random() * 25);
-  const p3Vote = 10 + (random() * 10);
-  const p4Vote = Math.max(0, 100 - p1Vote - p2Vote - p3Vote);
-
-  return {
-    seats: [
-      { party: parties[0], seats: p1Seats },
-      { party: parties[1], seats: p2Seats },
-      { party: parties[2], seats: p3Seats },
-      { party: parties[3] || 'Others', seats: p4Seats }
-    ],
-    voteShare: [
-      { name: parties[0], value: parseFloat(p1Vote.toFixed(1)) },
-      { name: parties[1], value: parseFloat(p2Vote.toFixed(1)) },
-      { name: parties[2], value: parseFloat(p3Vote.toFixed(1)) },
-      { name: parties[3] || 'Others', value: parseFloat(p4Vote.toFixed(1)) }
-    ]
-  };
-};
-
-const electionData = { '2024': {}, '2019': {}, '2014': {} };
-
-['2024', '2019', '2014'].forEach(year => {
-  ALL_STATES.forEach(state => {
-    if (baseData[year] && baseData[year][state]) {
-      electionData[year][state] = baseData[year][state];
-    } else {
-      electionData[year][state] = generateMockStateData(state, year);
-    }
-  });
-});
+const electionData = electionDataRaw;
 
 const COLORS = ['#ff9933', '#138808', '#64748b', '#eab308', '#ec4899', '#3b82f6', '#ef4444']; // Extended color palette for more parties
 
