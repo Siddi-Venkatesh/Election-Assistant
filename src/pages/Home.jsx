@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, ArrowLeft, CheckCircle, Info, Calendar, MapPin, User, Sparkles } from 'lucide-react';
+import { ChevronRight, ArrowLeft, CheckCircle, Info, Calendar, MapPin, User, Sparkles, BarChart3 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,6 +41,14 @@ export default function Home() {
       content: t('step_4_desc'),
       action: t('step_4_action'),
       route: '/guidelines'
+    },
+    {
+      id: 5,
+      title: t('step_5_title') || 'Election Results',
+      icon: <BarChart3 className="w-6 h-6" />,
+      content: t('step_5_desc') || 'View current election results or view past election results and statistical report.',
+      action: t('step_5_action') || 'View Results',
+      route: '/results'
     }
   ];
 

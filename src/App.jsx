@@ -11,6 +11,7 @@ import EligibilityPage from './pages/Eligibility';
 import RegisterPage from './pages/Register';
 import BoothPage from './pages/Booth';
 import GuidelinesPage from './pages/Guidelines';
+import ElectionResultsPage from './pages/ElectionResults';
 
 // Helper component to add smooth page transitions
 export const PageTransition = ({ children }) => (
@@ -101,8 +102,13 @@ function Layout({ children }) {
             </Link>
             
             <div className="flex items-center gap-4">
-              
-
+              <Link 
+                to="/results" 
+                className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 transition-all"
+              >
+                <Globe className="w-4 h-4" /> {/* Or another appropriate icon like BarChart */}
+                Election Results
+              </Link>
 
               {/* Language Dropdown */}
               <div className="relative flex items-center bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-xl px-3 py-2 border border-slate-200/50 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-shadow hidden sm:flex">
@@ -250,6 +256,7 @@ export default function App() {
           <Route path="/register" element={<PageTransition><RegisterPage /></PageTransition>} />
           <Route path="/booth" element={<PageTransition><BoothPage /></PageTransition>} />
           <Route path="/guidelines" element={<PageTransition><GuidelinesPage /></PageTransition>} />
+          <Route path="/results" element={<PageTransition><ElectionResultsPage /></PageTransition>} />
         </Routes>
       </Layout>
     </Router>
