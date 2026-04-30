@@ -4,10 +4,18 @@ import { BarChart3 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
-// Mock Data for different years and states
-const STATES = ['All India', 'Uttar Pradesh', 'Maharashtra', 'West Bengal', 'Tamil Nadu'];
+const ALL_STATES = [
+  'All India',
+  'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
+  'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand',
+  'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+  'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab',
+  'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
+  'Uttar Pradesh', 'Uttarakhand', 'West Bengal'
+];
 
-const electionData = {
+// Pre-defined accurate data for key states
+const baseData = {
   '2024': {
     'All India': { seats: [{party: 'NDA', seats: 293}, {party: 'INDIA', seats: 234}, {party: 'Others', seats: 16}], voteShare: [{name: 'NDA', value: 42.5}, {name: 'INDIA', value: 40.6}, {name: 'Others', value: 16.9}] },
     'Uttar Pradesh': { seats: [{party: 'NDA', seats: 36}, {party: 'INDIA', seats: 43}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 41.4}, {name: 'INDIA', value: 43.3}, {name: 'Others', value: 15.3}] },
@@ -31,6 +39,56 @@ const electionData = {
   }
 };
 
+// Generate stable deterministic mock data for the remaining states
+const generateMockStateData = (stateName, year) => {
+  let hash = 0;
+  const str = stateName + year;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  const random = () => {
+    const x = Math.sin(hash++) * 10000;
+    return x - Math.floor(x);
+  };
+  
+  const totalSeats = 5 + Math.floor(random() * 35); // 5 to 40 seats
+  const ndaSeats = Math.floor(random() * totalSeats);
+  const indiaSeats = Math.floor(random() * (totalSeats - ndaSeats));
+  const otherSeats = totalSeats - ndaSeats - indiaSeats;
+
+  const ndaVote = 30 + (random() * 20);
+  const indiaVote = 30 + (random() * 20);
+  const otherVote = 100 - ndaVote - indiaVote;
+
+  const oppositionLabel = year === '2024' ? 'INDIA' : 'UPA';
+
+  return {
+    seats: [
+      { party: 'NDA', seats: ndaSeats },
+      { party: oppositionLabel, seats: indiaSeats },
+      { party: 'Others', seats: otherSeats }
+    ],
+    voteShare: [
+      { name: 'NDA', value: parseFloat(ndaVote.toFixed(1)) },
+      { name: oppositionLabel, value: parseFloat(indiaVote.toFixed(1)) },
+      { name: 'Others', value: parseFloat(otherVote.toFixed(1)) }
+    ]
+  };
+};
+
+const electionData = { '2024': {}, '2019': {}, '2014': {} };
+
+['2024', '2019', '2014'].forEach(year => {
+  ALL_STATES.forEach(state => {
+    if (baseData[year] && baseData[year][state]) {
+      electionData[year][state] = baseData[year][state];
+    } else {
+      electionData[year][state] = generateMockStateData(state, year);
+    }
+  });
+});
+
 const COLORS = ['#ff9933', '#138808', '#64748b']; // Indian flag colors + slate for others
 
 export default function ElectionResults() {
@@ -38,7 +96,6 @@ export default function ElectionResults() {
   const [selectedYear, setSelectedYear] = useState('2024');
   const [selectedState, setSelectedState] = useState('All India');
 
-  // Fallback to empty data structure if state/year combo doesn't exist
   const data = electionData[selectedYear]?.[selectedState] || { seats: [], voteShare: [] };
 
   return (
@@ -88,7 +145,7 @@ export default function ElectionResults() {
             onChange={(e) => setSelectedState(e.target.value)}
             className="bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2 font-semibold text-indigo-600 dark:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all cursor-pointer w-full"
           >
-            {STATES.map((state) => (
+            {ALL_STATES.map((state) => (
               <option key={state} value={state}>{state}</option>
             ))}
           </select>
