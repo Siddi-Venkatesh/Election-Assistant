@@ -1,14 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, TrendingUp, Users, Calendar, ArrowRight, ExternalLink } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+
+// Mock Data for different years
+const electionData = {
+  '2024': {
+    seats: [
+      { party: 'NDA', seats: 293 },
+      { party: 'INDIA', seats: 234 },
+      { party: 'Others', seats: 16 }
+    ],
+    voteShare: [
+      { name: 'NDA', value: 42.5 },
+      { name: 'INDIA', value: 40.6 },
+      { name: 'Others', value: 16.9 }
+    ]
+  },
+  '2019': {
+    seats: [
+      { party: 'NDA', seats: 353 },
+      { party: 'UPA', seats: 91 },
+      { party: 'Others', seats: 98 }
+    ],
+    voteShare: [
+      { name: 'NDA', value: 45.0 },
+      { name: 'UPA', value: 26.0 },
+      { name: 'Others', value: 29.0 }
+    ]
+  },
+  '2014': {
+    seats: [
+      { party: 'NDA', seats: 336 },
+      { party: 'UPA', seats: 60 },
+      { party: 'Others', seats: 147 }
+    ],
+    voteShare: [
+      { name: 'NDA', value: 38.5 },
+      { name: 'UPA', value: 23.0 },
+      { name: 'Others', value: 38.5 }
+    ]
+  }
+};
+
+const COLORS = ['#ff9933', '#138808', '#64748b']; // Indian flag colors + slate for others
 
 export default function ElectionResults() {
   const { t } = useTranslation();
+  const [selectedYear, setSelectedYear] = useState('2024');
+
+  const data = electionData[selectedYear];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      <div className="text-center space-y-4 mb-12">
+    <div className="max-w-5xl mx-auto space-y-8">
+      <div className="text-center space-y-4 mb-8">
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -24,71 +70,98 @@ export default function ElectionResults() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <motion.a
-          href="https://results.eci.gov.in/"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="flex justify-center mb-8">
+        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-3 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 flex items-center gap-4">
+          <label htmlFor="year-select" className="font-bold text-slate-700 dark:text-slate-300 ml-2">
+            Select Election Year:
+          </label>
+          <select 
+            id="year-select"
+            value={selectedYear} 
+            onChange={(e) => setSelectedYear(e.target.value)}
+            className="bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl px-4 py-2 font-semibold text-indigo-600 dark:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all cursor-pointer"
+          >
+            <option value="2024">2024 General Elections</option>
+            <option value="2019">2019 General Elections</option>
+            <option value="2014">2014 General Elections</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Seat Distribution Chart */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -5 }}
-          className="block group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/10 transition-all"
+          key={`bar-${selectedYear}`}
+          className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-6 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none"
         >
-          <div className="bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
-            <TrendingUp className="w-8 h-8 text-indigo-600 dark:text-indigo-400 group-hover:text-white transition-colors" />
-          </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            Current Results <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+            Seat Distribution ({selectedYear})
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
-            View live counting trends and final results for ongoing General and State Assembly elections.
-          </p>
-          <div className="flex items-center text-indigo-600 dark:text-indigo-400 font-bold group-hover:translate-x-2 transition-transform">
-            View Live Results <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="h-[300px] w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={data.seats}
+                margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
+                <XAxis dataKey="party" stroke="#94a3b8" />
+                <YAxis stroke="#94a3b8" />
+                <Tooltip 
+                  cursor={{fill: 'transparent'}}
+                  contentStyle={{ borderRadius: '1rem', border: 'none', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
+                />
+                <Legend />
+                <Bar dataKey="seats" name="Total Seats Won" radius={[8, 8, 0, 0]}>
+                  {data.seats.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
-        </motion.a>
+        </motion.div>
 
-        <motion.a
-          href="https://eci.gov.in/statistical-report/statistical-reports/"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Vote Share Chart */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          whileHover={{ y: -5 }}
-          className="block group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-purple-500/10 transition-all"
+          key={`pie-${selectedYear}`}
+          className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-6 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none"
         >
-          <div className="bg-purple-50 dark:bg-purple-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors">
-            <Calendar className="w-8 h-8 text-purple-600 dark:text-purple-400 group-hover:text-white transition-colors" />
-          </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            Past Statistical Reports <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-purple-500 transition-colors" />
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">
+            Vote Share % ({selectedYear})
           </h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6">
-            Access comprehensive data, voter turnout statistics, and detailed reports from previous elections.
-          </p>
-          <div className="flex items-center text-purple-600 dark:text-purple-400 font-bold group-hover:translate-x-2 transition-transform">
-            Browse Archives <ArrowRight className="w-5 h-5 ml-2" />
+          <div className="h-[300px] w-full flex justify-center">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={data.voteShare}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  paddingAngle={5}
+                  dataKey="value"
+                  label={({name, value}) => `${name} ${value}%`}
+                >
+                  {data.voteShare.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip 
+                  contentStyle={{ borderRadius: '1rem', border: 'none', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
+                  formatter={(value) => `${value}%`}
+                />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
           </div>
-        </motion.a>
+        </motion.div>
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-[2rem] p-8 border border-indigo-100 dark:border-indigo-500/20 flex flex-col sm:flex-row items-center gap-6"
-      >
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm shrink-0">
-          <Users className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
-        </div>
-        <div>
-          <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Why analyze election data?</h4>
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-            Understanding election results and voter turnout helps citizens realize the impact of their vote and promotes transparency in the democratic process.
-          </p>
-        </div>
-      </motion.div>
     </div>
   );
 }

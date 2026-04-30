@@ -26,7 +26,7 @@ export default function DownloadEpic() {
 
       <div className="grid md:grid-cols-2 gap-6">
         <motion.a
-          href="https://voters.eci.gov.in/"
+          href="https://voters.eci.gov.in/home/e-epic-download"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
