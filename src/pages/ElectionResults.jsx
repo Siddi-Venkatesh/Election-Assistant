@@ -18,28 +18,46 @@ const ALL_STATES = [
 const baseData = {
   '2024': {
     'All India': { seats: [{party: 'NDA', seats: 293}, {party: 'INDIA', seats: 234}, {party: 'Others', seats: 16}], voteShare: [{name: 'NDA', value: 42.5}, {name: 'INDIA', value: 40.6}, {name: 'Others', value: 16.9}] },
-    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 16}, {party: 'YSRCP', seats: 4}, {party: 'JSP', seats: 2}, {party: 'BJP', seats: 3}], voteShare: [{name: 'TDP', value: 37.8}, {name: 'YSRCP', value: 39.6}, {name: 'JSP', value: 11.3}, {name: 'BJP', value: 11.3}] },
-    'Uttar Pradesh': { seats: [{party: 'NDA', seats: 36}, {party: 'INDIA', seats: 43}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 41.4}, {name: 'INDIA', value: 43.3}, {name: 'Others', value: 15.3}] },
-    'Maharashtra': { seats: [{party: 'NDA', seats: 17}, {party: 'INDIA', seats: 30}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 43.6}, {name: 'INDIA', value: 43.7}, {name: 'Others', value: 12.7}] },
-    'West Bengal': { seats: [{party: 'NDA', seats: 12}, {party: 'INDIA', seats: 29}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 38.7}, {name: 'INDIA', value: 45.8}, {name: 'Others', value: 15.5}] },
-    'Tamil Nadu': { seats: [{party: 'NDA', seats: 0}, {party: 'INDIA', seats: 39}, {party: 'Others', seats: 0}], voteShare: [{name: 'NDA', value: 11.3}, {name: 'INDIA', value: 46.9}, {name: 'Others', value: 41.8}] }
+    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 16}, {party: 'YSRCP', seats: 4}, {party: 'JSP', seats: 2}, {party: 'BJP', seats: 3}], voteShare: [{name: 'TDP', value: 37.8}, {name: 'YSRCP', value: 39.6}, {name: 'JSP', value: 11.3}, {name: 'BJP', value: 11.3}] }
   },
   '2019': {
     'All India': { seats: [{party: 'NDA', seats: 353}, {party: 'UPA', seats: 91}, {party: 'Others', seats: 98}], voteShare: [{name: 'NDA', value: 45.0}, {name: 'UPA', value: 26.0}, {name: 'Others', value: 29.0}] },
-    'Andhra Pradesh': { seats: [{party: 'YSRCP', seats: 22}, {party: 'TDP', seats: 3}, {party: 'JSP', seats: 0}, {party: 'INC', seats: 0}], voteShare: [{name: 'YSRCP', value: 49.1}, {name: 'TDP', value: 39.6}, {name: 'JSP', value: 5.9}, {name: 'INC', value: 1.3}] },
-    'Uttar Pradesh': { seats: [{party: 'NDA', seats: 64}, {party: 'UPA', seats: 1}, {party: 'Others', seats: 15}], voteShare: [{name: 'NDA', value: 50.8}, {name: 'UPA', value: 6.4}, {name: 'Others', value: 42.8}] },
-    'Maharashtra': { seats: [{party: 'NDA', seats: 41}, {party: 'UPA', seats: 5}, {party: 'Others', seats: 2}], voteShare: [{name: 'NDA', value: 51.3}, {name: 'UPA', value: 32.1}, {name: 'Others', value: 16.6}] },
-    'West Bengal': { seats: [{party: 'NDA', seats: 18}, {party: 'UPA', seats: 2}, {party: 'Others', seats: 22}], voteShare: [{name: 'NDA', value: 40.6}, {name: 'UPA', value: 5.7}, {name: 'Others', value: 53.7}] },
-    'Tamil Nadu': { seats: [{party: 'NDA', seats: 1}, {party: 'UPA', seats: 38}, {party: 'Others', seats: 0}], voteShare: [{name: 'NDA', value: 18.5}, {name: 'UPA', value: 53.3}, {name: 'Others', value: 28.2}] }
+    'Andhra Pradesh': { seats: [{party: 'YSRCP', seats: 22}, {party: 'TDP', seats: 3}, {party: 'JSP', seats: 0}, {party: 'INC', seats: 0}], voteShare: [{name: 'YSRCP', value: 49.1}, {name: 'TDP', value: 39.6}, {name: 'JSP', value: 5.9}, {name: 'INC', value: 1.3}] }
   },
   '2014': {
     'All India': { seats: [{party: 'NDA', seats: 336}, {party: 'UPA', seats: 60}, {party: 'Others', seats: 147}], voteShare: [{name: 'NDA', value: 38.5}, {name: 'UPA', value: 23.0}, {name: 'Others', value: 38.5}] },
-    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 15}, {party: 'YSRCP', seats: 8}, {party: 'BJP', seats: 2}, {party: 'INC', seats: 0}], voteShare: [{name: 'TDP', value: 40.5}, {name: 'YSRCP', value: 45.4}, {name: 'BJP', value: 7.2}, {name: 'INC', value: 2.8}] },
-    'Uttar Pradesh': { seats: [{party: 'NDA', seats: 73}, {party: 'UPA', seats: 2}, {party: 'Others', seats: 5}], voteShare: [{name: 'NDA', value: 43.3}, {name: 'UPA', value: 7.5}, {name: 'Others', value: 49.2}] },
-    'Maharashtra': { seats: [{party: 'NDA', seats: 42}, {party: 'UPA', seats: 6}, {party: 'Others', seats: 0}], voteShare: [{name: 'NDA', value: 51.3}, {name: 'UPA', value: 34.4}, {name: 'Others', value: 14.3}] },
-    'West Bengal': { seats: [{party: 'NDA', seats: 2}, {party: 'UPA', seats: 4}, {party: 'Others', seats: 36}], voteShare: [{name: 'NDA', value: 17.0}, {name: 'UPA', value: 9.7}, {name: 'Others', value: 73.3}] },
-    'Tamil Nadu': { seats: [{party: 'NDA', seats: 1}, {party: 'UPA', seats: 0}, {party: 'Others', seats: 38}], voteShare: [{name: 'NDA', value: 18.8}, {name: 'UPA', value: 23.9}, {name: 'Others', value: 57.3}] }
+    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 15}, {party: 'YSRCP', seats: 8}, {party: 'BJP', seats: 2}, {party: 'INC', seats: 0}], voteShare: [{name: 'TDP', value: 40.5}, {name: 'YSRCP', value: 45.4}, {name: 'BJP', value: 7.2}, {name: 'INC', value: 2.8}] }
   }
+};
+
+const STATE_PARTIES = {
+  'Arunachal Pradesh': ['BJP', 'INC', 'NPEP', 'PPA'],
+  'Assam': ['BJP', 'INC', 'AIUDF', 'AGP'],
+  'Bihar': ['RJD', 'JDU', 'BJP', 'LJP'],
+  'Chhattisgarh': ['INC', 'BJP', 'JCC', 'BSP'],
+  'Goa': ['BJP', 'INC', 'MGP', 'AAP'],
+  'Gujarat': ['BJP', 'INC', 'AAP', 'BTP'],
+  'Haryana': ['BJP', 'INC', 'JJP', 'INLD'],
+  'Himachal Pradesh': ['INC', 'BJP', 'CPIM', 'AAP'],
+  'Jharkhand': ['JMM', 'BJP', 'INC', 'AJSU'],
+  'Karnataka': ['INC', 'BJP', 'JDS', 'KRPP'],
+  'Kerala': ['CPI(M)', 'INC', 'IUML', 'CPI'],
+  'Madhya Pradesh': ['BJP', 'INC', 'BSP', 'SP'],
+  'Maharashtra': ['BJP', 'SHS', 'NCP', 'INC'],
+  'Manipur': ['BJP', 'INC', 'NPEP', 'NPF'],
+  'Meghalaya': ['NPEP', 'INC', 'UDP', 'TMC'],
+  'Mizoram': ['MNF', 'ZPM', 'INC', 'BJP'],
+  'Nagaland': ['NDPP', 'NPF', 'BJP', 'INC'],
+  'Odisha': ['BJD', 'BJP', 'INC', 'CPI'],
+  'Punjab': ['AAP', 'INC', 'SAD', 'BJP'],
+  'Rajasthan': ['BJP', 'INC', 'RLP', 'BSP'],
+  'Sikkim': ['SKM', 'SDF', 'BJP', 'INC'],
+  'Tamil Nadu': ['DMK', 'AIADMK', 'INC', 'BJP'],
+  'Telangana': ['BRS', 'INC', 'BJP', 'AIMIM'],
+  'Tripura': ['BJP', 'INC', 'TIPRA', 'CPIM'],
+  'Uttar Pradesh': ['BJP', 'SP', 'BSP', 'INC'],
+  'Uttarakhand': ['BJP', 'INC', 'BSP', 'UKD'],
+  'West Bengal': ['TMC', 'BJP', 'INC', 'CPIM']
 };
 
 // Generate stable deterministic mock data for the remaining states
@@ -56,26 +74,29 @@ const generateMockStateData = (stateName, year) => {
   };
   
   const totalSeats = 5 + Math.floor(random() * 35); // 5 to 40 seats
-  const ndaSeats = Math.floor(random() * totalSeats);
-  const indiaSeats = Math.floor(random() * (totalSeats - ndaSeats));
-  const otherSeats = totalSeats - ndaSeats - indiaSeats;
+  const parties = STATE_PARTIES[stateName] || ['Party A', 'Party B', 'Party C', 'Others'];
+  const p1Seats = Math.floor(random() * totalSeats);
+  const p2Seats = Math.floor(random() * (totalSeats - p1Seats));
+  const p3Seats = Math.floor(random() * (totalSeats - p1Seats - p2Seats));
+  const p4Seats = totalSeats - p1Seats - p2Seats - p3Seats;
 
-  const ndaVote = 30 + (random() * 20);
-  const indiaVote = 30 + (random() * 20);
-  const otherVote = 100 - ndaVote - indiaVote;
-
-  const oppositionLabel = year === '2024' ? 'INDIA' : 'UPA';
+  const p1Vote = 25 + (random() * 25);
+  const p2Vote = 25 + (random() * 25);
+  const p3Vote = 10 + (random() * 10);
+  const p4Vote = Math.max(0, 100 - p1Vote - p2Vote - p3Vote);
 
   return {
     seats: [
-      { party: 'NDA', seats: ndaSeats },
-      { party: oppositionLabel, seats: indiaSeats },
-      { party: 'Others', seats: otherSeats }
+      { party: parties[0], seats: p1Seats },
+      { party: parties[1], seats: p2Seats },
+      { party: parties[2], seats: p3Seats },
+      { party: parties[3] || 'Others', seats: p4Seats }
     ],
     voteShare: [
-      { name: 'NDA', value: parseFloat(ndaVote.toFixed(1)) },
-      { name: oppositionLabel, value: parseFloat(indiaVote.toFixed(1)) },
-      { name: 'Others', value: parseFloat(otherVote.toFixed(1)) }
+      { name: parties[0], value: parseFloat(p1Vote.toFixed(1)) },
+      { name: parties[1], value: parseFloat(p2Vote.toFixed(1)) },
+      { name: parties[2], value: parseFloat(p3Vote.toFixed(1)) },
+      { name: parties[3] || 'Others', value: parseFloat(p4Vote.toFixed(1)) }
     ]
   };
 };
