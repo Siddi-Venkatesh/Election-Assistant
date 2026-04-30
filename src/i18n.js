@@ -30,7 +30,9 @@ const resources = {
       pro_tip: "Pro tip: Make sure your name on the electoral roll exactly matches your photo ID.",
       chat_placeholder: "Type your question...",
       chat_greeting: "Hi there! 👋 I'm here to help you navigate your first election. Ask me anything.",
-      home: "Home"
+      home: "Home",
+      results_title: "Election Results",
+      results_desc: "View current election results, past statistical reports, and analyze voter turnout trends across different constituencies."
     }
   },
   hi: {
