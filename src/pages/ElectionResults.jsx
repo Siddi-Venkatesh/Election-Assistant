@@ -18,6 +18,7 @@ const ALL_STATES = [
 const baseData = {
   '2024': {
     'All India': { seats: [{party: 'NDA', seats: 293}, {party: 'INDIA', seats: 234}, {party: 'Others', seats: 16}], voteShare: [{name: 'NDA', value: 42.5}, {name: 'INDIA', value: 40.6}, {name: 'Others', value: 16.9}] },
+    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 16}, {party: 'YSRCP', seats: 4}, {party: 'JSP', seats: 2}, {party: 'BJP', seats: 3}], voteShare: [{name: 'TDP', value: 37.8}, {name: 'YSRCP', value: 39.6}, {name: 'JSP', value: 11.3}, {name: 'BJP', value: 11.3}] },
     'Uttar Pradesh': { seats: [{party: 'NDA', seats: 36}, {party: 'INDIA', seats: 43}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 41.4}, {name: 'INDIA', value: 43.3}, {name: 'Others', value: 15.3}] },
     'Maharashtra': { seats: [{party: 'NDA', seats: 17}, {party: 'INDIA', seats: 30}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 43.6}, {name: 'INDIA', value: 43.7}, {name: 'Others', value: 12.7}] },
     'West Bengal': { seats: [{party: 'NDA', seats: 12}, {party: 'INDIA', seats: 29}, {party: 'Others', seats: 1}], voteShare: [{name: 'NDA', value: 38.7}, {name: 'INDIA', value: 45.8}, {name: 'Others', value: 15.5}] },
@@ -25,6 +26,7 @@ const baseData = {
   },
   '2019': {
     'All India': { seats: [{party: 'NDA', seats: 353}, {party: 'UPA', seats: 91}, {party: 'Others', seats: 98}], voteShare: [{name: 'NDA', value: 45.0}, {name: 'UPA', value: 26.0}, {name: 'Others', value: 29.0}] },
+    'Andhra Pradesh': { seats: [{party: 'YSRCP', seats: 22}, {party: 'TDP', seats: 3}, {party: 'JSP', seats: 0}, {party: 'INC', seats: 0}], voteShare: [{name: 'YSRCP', value: 49.1}, {name: 'TDP', value: 39.6}, {name: 'JSP', value: 5.9}, {name: 'INC', value: 1.3}] },
     'Uttar Pradesh': { seats: [{party: 'NDA', seats: 64}, {party: 'UPA', seats: 1}, {party: 'Others', seats: 15}], voteShare: [{name: 'NDA', value: 50.8}, {name: 'UPA', value: 6.4}, {name: 'Others', value: 42.8}] },
     'Maharashtra': { seats: [{party: 'NDA', seats: 41}, {party: 'UPA', seats: 5}, {party: 'Others', seats: 2}], voteShare: [{name: 'NDA', value: 51.3}, {name: 'UPA', value: 32.1}, {name: 'Others', value: 16.6}] },
     'West Bengal': { seats: [{party: 'NDA', seats: 18}, {party: 'UPA', seats: 2}, {party: 'Others', seats: 22}], voteShare: [{name: 'NDA', value: 40.6}, {name: 'UPA', value: 5.7}, {name: 'Others', value: 53.7}] },
@@ -32,6 +34,7 @@ const baseData = {
   },
   '2014': {
     'All India': { seats: [{party: 'NDA', seats: 336}, {party: 'UPA', seats: 60}, {party: 'Others', seats: 147}], voteShare: [{name: 'NDA', value: 38.5}, {name: 'UPA', value: 23.0}, {name: 'Others', value: 38.5}] },
+    'Andhra Pradesh': { seats: [{party: 'TDP', seats: 15}, {party: 'YSRCP', seats: 8}, {party: 'BJP', seats: 2}, {party: 'INC', seats: 0}], voteShare: [{name: 'TDP', value: 40.5}, {name: 'YSRCP', value: 45.4}, {name: 'BJP', value: 7.2}, {name: 'INC', value: 2.8}] },
     'Uttar Pradesh': { seats: [{party: 'NDA', seats: 73}, {party: 'UPA', seats: 2}, {party: 'Others', seats: 5}], voteShare: [{name: 'NDA', value: 43.3}, {name: 'UPA', value: 7.5}, {name: 'Others', value: 49.2}] },
     'Maharashtra': { seats: [{party: 'NDA', seats: 42}, {party: 'UPA', seats: 6}, {party: 'Others', seats: 0}], voteShare: [{name: 'NDA', value: 51.3}, {name: 'UPA', value: 34.4}, {name: 'Others', value: 14.3}] },
     'West Bengal': { seats: [{party: 'NDA', seats: 2}, {party: 'UPA', seats: 4}, {party: 'Others', seats: 36}], voteShare: [{name: 'NDA', value: 17.0}, {name: 'UPA', value: 9.7}, {name: 'Others', value: 73.3}] },
@@ -89,7 +92,7 @@ const electionData = { '2024': {}, '2019': {}, '2014': {} };
   });
 });
 
-const COLORS = ['#ff9933', '#138808', '#64748b']; // Indian flag colors + slate for others
+const COLORS = ['#ff9933', '#138808', '#64748b', '#eab308', '#ec4899', '#3b82f6', '#ef4444']; // Extended color palette for more parties
 
 export default function ElectionResults() {
   const { t } = useTranslation();
