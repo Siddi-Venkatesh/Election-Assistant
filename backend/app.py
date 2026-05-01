@@ -1,11 +1,14 @@
 import os
+from dotenv import load_dotenv
+
+# Load .env from the current directory of app.py
+base_path = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(os.path.join(base_path, '.env'))
+
 from flask import Flask, send_from_directory
 from flask_cors import CORS
-from dotenv import load_dotenv
 from routes.data import data_bp
 from routes.chat import chat_bp
-
-load_dotenv()
 
 # Point static folder to 'static' where React build will be placed
 app = Flask(__name__, static_folder='static', static_url_path='/')

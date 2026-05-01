@@ -1,7 +1,19 @@
-import React from 'react';
+/**
+ * @fileoverview Eligibility criteria page component.
+ * Displays the requirements a user must meet to be eligible to vote.
+ *
+ * @module pages/Eligibility
+ */
+import React, { memo } from 'react';
 import { CheckCircle2, ShieldCheck, UserCheck, Scale } from 'lucide-react';
 
-export default function Eligibility() {
+/**
+ * Eligibility page displaying voter eligibility criteria.
+ * Wrapped in React.memo as it renders static content with no props.
+ *
+ * @returns {React.ReactElement} The eligibility criteria page.
+ */
+const Eligibility = memo(function Eligibility() {
   const criteria = [
     { icon: <Globe className="w-5 h-5"/>, text: "Be a citizen of the country." },
     { icon: <UserCheck className="w-5 h-5"/>, text: "Be at least 18 years old on the qualifying date." },
@@ -11,7 +23,7 @@ export default function Eligibility() {
 
   return (
     <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-2xl p-8 md:p-12 rounded-[2rem] border border-white/60 dark:border-slate-700/60 shadow-2xl shadow-indigo-500/10 dark:shadow-none max-w-3xl mx-auto mt-4 relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+      <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none" aria-hidden="true">
         <CheckCircle2 className="w-64 h-64 text-indigo-600" />
       </div>
       
@@ -21,25 +33,27 @@ export default function Eligibility() {
           To cast your vote and participate in the democratic process, you must meet all of the following requirements:
         </p>
         
-        <div className="space-y-4">
+        <ul className="space-y-4" role="list" aria-label="Voter eligibility requirements">
           {criteria.map((item, idx) => (
-            <div key={idx} className="flex items-center gap-4 p-5 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-800 transition-colors">
-              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2.5 rounded-xl">
+            <li key={idx} className="flex items-center gap-4 p-5 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-800 transition-colors">
+              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 p-2.5 rounded-xl" aria-hidden="true">
                 {item.icon}
               </div>
               <span className="text-slate-700 dark:text-slate-200 font-medium text-lg">{item.text}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );
-}
+});
+
+export default Eligibility;
 
 // Inline fallback for Globe just for Eligibility
 function Globe(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} aria-hidden="true">
       <circle cx="12" cy="12" r="10"/>
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
       <path d="M2 12h20"/>

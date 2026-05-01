@@ -2,45 +2,29 @@ import React, { useState } from 'react';
 import { Search, MapPin, Loader2, ExternalLink, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { validateEpicNumber, getBoothRecord } from '../utils/helpers';
+import { trackBoothSearch } from '../services/analytics';
 
 const realisticRecords = [
   {
-    nameEn: "Venkatesh Siddi",
-    nameLocal: "వెంకటేష్ సిద్ది",
-    age: 23,
-    relativeNameEn: "Ekambaram Siddi",
-    relativeNameLocal: "ఏకాంబరం సిద్ది",
-    state: "Andhra Pradesh",
-    district: "16-Palnadu",
-    assembly: "99-Vinukonda",
-    part: "108-VELPUR",
-    pollingStation: "Zilla Parishad High School, 1st room VELPURU",
+    nameEn: "Venkatesh Siddi", nameLocal: "వెంకటేష్ సిద్ది", age: 23,
+    relativeNameEn: "Ekambaram Siddi", relativeNameLocal: "ఏకాంబరం సిద్ది",
+    state: "Andhra Pradesh", district: "16-Palnadu", assembly: "99-Vinukonda",
+    part: "108-VELPUR", pollingStation: "Zilla Parishad High School, 1st room VELPURU",
     partSerialNumber: 482
   },
   {
-    nameEn: "Priya Sharma",
-    nameLocal: "प्रिया शर्मा",
-    age: 28,
-    relativeNameEn: "Rajesh Sharma",
-    relativeNameLocal: "राजेश शर्मा",
-    state: "Maharashtra",
-    district: "25-Pune",
-    assembly: "214-Pune Cantonment",
-    part: "45-Camp",
-    pollingStation: "St. Mary's High School, East Wing Room 2",
+    nameEn: "Priya Sharma", nameLocal: "प्रिया शर्मा", age: 28,
+    relativeNameEn: "Rajesh Sharma", relativeNameLocal: "राजेश शर्मा",
+    state: "Maharashtra", district: "25-Pune", assembly: "214-Pune Cantonment",
+    part: "45-Camp", pollingStation: "St. Mary's High School, East Wing Room 2",
     partSerialNumber: 156
   },
   {
-    nameEn: "Rahul Verma",
-    nameLocal: "राहुल वर्मा",
-    age: 35,
-    relativeNameEn: "Suresh Verma",
-    relativeNameLocal: "सुरेश वर्मा",
-    state: "Delhi",
-    district: "06-Central Delhi",
-    assembly: "40-New Delhi",
-    part: "12-Connaught Place",
-    pollingStation: "Municipal Primary School, Block B",
+    nameEn: "Rahul Verma", nameLocal: "राहुल वर्मा", age: 35,
+    relativeNameEn: "Suresh Verma", relativeNameLocal: "सुरेश वर्मा",
+    state: "Delhi", district: "06-Central Delhi", assembly: "40-New Delhi",
+    part: "12-Connaught Place", pollingStation: "Municipal Primary School, Block B",
     partSerialNumber: 89
   }
 ];
@@ -54,9 +38,11 @@ export default function Booth() {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    const validation = validateEpicNumber(epic.trim());
     if (!epic.trim() || epic.length < 8) {
-      setError('Please enter a valid EPIC number (e.g., ABC1234567).');
+      setError(validation.error || 'Please enter a valid EPIC number (e.g., ABC1234567).');
       setResult(null);
+      trackBoothSearch(false);
       return;
     }
     
@@ -64,24 +50,18 @@ export default function Booth() {
     setIsSearching(true);
     setResult(null);
 
-    // Pick a deterministic but "random" realistic booth based on the length/chars of EPIC
-    const hash = epic.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    // If the user types SZ02625770 or anything similar, it will hash to one. 
-    // Let's make sure the Venkatesh Siddi record is prominent.
-    const selectedRecord = realisticRecords[hash % realisticRecords.length];
+    const selectedRecord = getBoothRecord(epic, realisticRecords);
 
     setTimeout(() => {
       setIsSearching(false);
-      setResult({
-        ...selectedRecord,
-        epicNumber: epic.toUpperCase()
-      });
+      setResult({ ...selectedRecord, epicNumber: epic.toUpperCase() });
+      trackBoothSearch(true);
     }, 1500);
   };
 
   return (
     <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-2xl p-8 md:p-12 rounded-[2rem] border border-white/60 dark:border-slate-700/60 shadow-2xl shadow-indigo-500/10 dark:shadow-none max-w-[95%] mx-auto mt-4 relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+      <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none" aria-hidden="true">
         <MapPin className="w-64 h-64 text-indigo-500" />
       </div>
 
@@ -91,8 +71,8 @@ export default function Booth() {
           {t('booth_desc', 'Enter your 10-digit EPIC number to find the exact details of your electoral roll registration, just like the official ECI database.')}
         </p>
 
-        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200/60 dark:border-amber-800/50 p-4 rounded-2xl flex gap-3 mb-6 shadow-sm w-full">
-          <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200/60 dark:border-amber-800/50 p-4 rounded-2xl flex gap-3 mb-6 shadow-sm w-full" role="note">
+          <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" aria-hidden="true" />
           <p className="text-sm font-medium text-amber-900 dark:text-amber-200 leading-relaxed">
             {t('booth_note', 'Note: This app provides a simulated, realistic demonstration. For your actual, legally binding polling booth, please use the official Election Commission of India portal.')}
           </p>
@@ -110,47 +90,54 @@ export default function Booth() {
             target="_blank" 
             rel="noopener noreferrer"
             className="shrink-0 w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow-xl shadow-emerald-500/30 transition-all hover:-translate-y-1 hover:shadow-emerald-500/40 active:scale-95 flex items-center justify-center gap-2"
+            aria-label="Open official ECI electoral search in a new tab"
           >
-            {t('booth_eci_btn', 'Official ECI Search')} <ExternalLink className="w-5 h-5" />
+            {t('booth_eci_btn', 'Official ECI Search')} <ExternalLink className="w-5 h-5" aria-hidden="true" />
           </a>
         </div>
 
-        <div className="flex items-center justify-center gap-4 w-full mb-8">
+        <div className="flex items-center justify-center gap-4 w-full mb-8" aria-hidden="true">
           <div className="h-px bg-slate-200 dark:bg-slate-700 flex-1"></div>
           <span className="text-slate-400 dark:text-slate-500 font-bold text-sm tracking-widest uppercase">Or try a mock search</span>
           <div className="h-px bg-slate-200 dark:bg-slate-700 flex-1"></div>
         </div>
         
         <div className="bg-slate-50 dark:bg-slate-900/50 p-6 md:p-8 rounded-3xl border border-slate-200/60 dark:border-slate-700 shadow-inner w-full">
-          <form onSubmit={handleSearch}>
-            <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">
+          <form onSubmit={handleSearch} aria-label="Search for polling booth by EPIC number">
+            <label htmlFor="epic-input" className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-3">
               {t('epic_label', 'EPIC Number (Voter ID Number)')}
             </label>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="relative flex-1">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none" aria-hidden="true">
                   <Search className="h-5 w-5 text-slate-400" />
                 </div>
                 <input 
+                  id="epic-input"
                   type="text" 
                   value={epic}
                   onChange={(e) => setEpic(e.target.value.toUpperCase())}
                   placeholder="e.g. SZ02625770" 
                   className="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl pl-12 pr-4 py-4 dark:text-white focus:outline-none focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-mono text-lg shadow-sm uppercase"
+                  aria-describedby="epic-hint epic-error"
+                  aria-invalid={error ? 'true' : 'false'}
+                  autoComplete="off"
                 />
+                <span id="epic-hint" className="sr-only">Enter your 10-character EPIC number, for example SZ02625770</span>
               </div>
               <button 
                 type="submit"
                 disabled={isSearching}
                 className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-2xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 active:scale-95 transition-all disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center min-w-[140px]"
+                aria-label={isSearching ? 'Searching...' : 'Search mock database'}
               >
-                {isSearching ? <Loader2 className="w-6 h-6 animate-spin" /> : t('search_mock_btn', 'Search Mock')}
+                {isSearching ? <Loader2 className="w-6 h-6 animate-spin" aria-hidden="true" /> : t('search_mock_btn', 'Search Mock')}
               </button>
             </div>
-            {error && <p className="text-red-500 mt-3 text-sm font-medium">{error}</p>}
+            {error && <p id="epic-error" className="text-red-500 mt-3 text-sm font-medium" role="alert">{error}</p>}
             
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-4 flex items-center gap-2">
-              <span className={`w-2 h-2 rounded-full ${isSearching ? 'bg-amber-500 animate-bounce' : 'bg-green-500 animate-pulse'}`}></span>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-4 flex items-center gap-2" aria-live="polite">
+              <span className={`w-2 h-2 rounded-full ${isSearching ? 'bg-amber-500 animate-bounce' : 'bg-green-500 animate-pulse'}`} aria-hidden="true"></span>
               {isSearching ? t('searching_mock', 'Searching Mock Database...') : t('simulated_db', 'Simulated Electoral Database')}
             </p>
           </form>
@@ -163,27 +150,29 @@ export default function Booth() {
               animate={{ opacity: 1, height: 'auto', y: 0 }}
               exit={{ opacity: 0, height: 0 }}
               className="mt-6 overflow-hidden w-full"
+              aria-live="polite"
             >
-              <div className="w-full overflow-x-auto bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+              <div className="w-full overflow-x-auto bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg" role="region" aria-label="Search results">
                 <div className="flex justify-between items-center p-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800">
                   <h3 className="font-bold text-slate-800 dark:text-slate-200">Search Results</h3>
                   <span className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-bold px-2 py-1 rounded-lg border border-indigo-200 dark:border-indigo-800">MOCK RESULT</span>
                 </div>
-                <table className="w-full text-sm text-left border-collapse min-w-[1000px]">
+                <table className="w-full text-sm text-left border-collapse min-w-[1000px]" aria-label="Polling booth search results">
+                  <caption className="sr-only">Search results for EPIC number {result.epicNumber}</caption>
                   <thead className="bg-[#def0ff] dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
                     <tr>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700 w-12 text-center">S.<br/>NO.</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Epic Number</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Name</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700 w-12">Age</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Relative<br/>Name</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">State</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">District</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Assembly<br/>Constituency</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Part</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Polling Station</th>
-                      <th className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Part Serial<br/>Number</th>
-                      <th className="px-4 py-3 text-center">Action</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700 w-12 text-center">S.<br/>NO.</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Epic Number</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Name</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700 w-12">Age</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Relative<br/>Name</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">State</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">District</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Assembly<br/>Constituency</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Part</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Polling Station</th>
+                      <th scope="col" className="px-4 py-3 border-r border-slate-200 dark:border-slate-700">Part Serial<br/>Number</th>
+                      <th scope="col" className="px-4 py-3 text-center">Action</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300">
@@ -210,7 +199,7 @@ export default function Booth() {
                       <td className="px-4 py-4 border-r border-slate-200 dark:border-slate-700 text-sm leading-relaxed max-w-[200px]">{result.pollingStation}</td>
                       <td className="px-4 py-4 border-r border-slate-200 dark:border-slate-700 text-center">{result.partSerialNumber}</td>
                       <td className="px-4 py-4 text-center">
-                        <button className="text-[#1a73e8] dark:text-blue-400 hover:underline font-medium text-sm text-center">
+                        <button className="text-[#1a73e8] dark:text-blue-400 hover:underline font-medium text-sm text-center" aria-label={`View details for ${result.nameEn}`}>
                           View<br/>Details
                         </button>
                       </td>
@@ -221,7 +210,6 @@ export default function Booth() {
             </motion.div>
           )}
         </AnimatePresence>
-
       </div>
     </div>
   );

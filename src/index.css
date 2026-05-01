@@ -2,8 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900 antialiased;
+/* Skip navigation link - visually hidden until focused for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: #4f46e5;
+  color: white;
+  font-weight: 700;
+  border-radius: 0 0 1rem 1rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
+}
+
+/* Enhanced focus-visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
 }

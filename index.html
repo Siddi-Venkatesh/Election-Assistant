@@ -4,9 +4,56 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Election Assistant</title>
+    <meta name="description" content="VoterAssist - An interactive Election Process Education assistant that guides first-time voters through eligibility, registration, polling booth search, and voting day guidelines. Powered by Google Gemini AI." />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- DNS Prefetch and Preconnect for Google APIs -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <title>VoterAssist — Election Process Education Assistant</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "VoterAssist",
+      "description": "Interactive Election Process Education assistant for first-time voters in India",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "VoterAssist Team"
+      }
+    }
+    </script>
   </head>
   <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+        <h1>VoterAssist requires JavaScript</h1>
+        <p>Please enable JavaScript in your browser to use the Election Process Education Assistant.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

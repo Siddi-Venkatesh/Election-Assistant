@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
-import { Download, Smartphone, ShieldCheck, ArrowRight, ExternalLink, FileText } from 'lucide-react';
+import { Download, Smartphone, ShieldCheck, ArrowRight, ExternalLink, FileText, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-export default function DownloadEpic() {
+const DownloadEpic = memo(function DownloadEpic() {
   const { t } = useTranslation();
 
   return (
@@ -13,6 +13,7 @@ export default function DownloadEpic() {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="inline-flex items-center justify-center p-4 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/40 dark:to-purple-900/40 rounded-3xl mb-4 shadow-inner"
+          aria-hidden="true"
         >
           <Download className="w-12 h-12 text-indigo-600 dark:text-indigo-400" />
         </motion.div>
@@ -33,18 +34,19 @@ export default function DownloadEpic() {
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ y: -5 }}
           className="block group bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-indigo-500/10 transition-all"
+          aria-label="Download e-EPIC from official ECI portal (opens in new tab)"
         >
-          <div className="bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
+          <div className="bg-indigo-50 dark:bg-indigo-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors" aria-hidden="true">
             <Smartphone className="w-8 h-8 text-indigo-600 dark:text-indigo-400 group-hover:text-white transition-colors" />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-            Download via Portal <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+            Download via Portal <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-indigo-500 transition-colors" aria-hidden="true" />
           </h3>
           <p className="text-slate-600 dark:text-slate-400 mb-6">
             Log in to the official ECI Voters' Portal to download your digital Voter ID card instantly as a secure PDF.
           </p>
           <div className="flex items-center text-indigo-600 dark:text-indigo-400 font-bold group-hover:translate-x-2 transition-transform">
-            Go to ECI Portal <ArrowRight className="w-5 h-5 ml-2" />
+            Go to ECI Portal <ArrowRight className="w-5 h-5 ml-2" aria-hidden="true" />
           </div>
         </motion.a>
 
@@ -54,17 +56,17 @@ export default function DownloadEpic() {
           transition={{ delay: 0.1 }}
           className="block bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50 dark:shadow-none"
         >
-          <div className="bg-emerald-50 dark:bg-emerald-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+          <div className="bg-emerald-50 dark:bg-emerald-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6" aria-hidden="true">
             <ShieldCheck className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
             Benefits of e-EPIC
           </h3>
-          <ul className="text-slate-600 dark:text-slate-400 space-y-3">
-            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500"/> Valid as proof of identity and age</li>
-            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500"/> Cannot be lost or torn like paper</li>
-            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500"/> Easily printable and verifiable via QR code</li>
-            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500"/> Stores directly on your phone or DigiLocker</li>
+          <ul className="text-slate-600 dark:text-slate-400 space-y-3" role="list" aria-label="Benefits of downloading e-EPIC">
+            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" /> Valid as proof of identity and age</li>
+            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" /> Cannot be lost or torn like paper</li>
+            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" /> Easily printable and verifiable via QR code</li>
+            <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" aria-hidden="true" /> Stores directly on your phone or DigiLocker</li>
           </ul>
         </motion.div>
       </div>
@@ -75,7 +77,7 @@ export default function DownloadEpic() {
         transition={{ delay: 0.2 }}
         className="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-[2rem] p-8 border border-indigo-100 dark:border-indigo-500/20 flex flex-col sm:flex-row items-center gap-6"
       >
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm shrink-0">
+        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm shrink-0" aria-hidden="true">
           <FileText className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
         </div>
         <div>
@@ -87,4 +89,6 @@ export default function DownloadEpic() {
       </motion.div>
     </div>
   );
-}
+});
+
+export default DownloadEpic;
