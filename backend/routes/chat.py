@@ -12,6 +12,14 @@ import google.generativeai as genai
 chat_bp = Blueprint('chat', __name__)
 
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-1.5-flash')
+
+# Ordered fallback list in case configured model is unavailable/deprecated.
+MODEL_CANDIDATES = [
+    GEMINI_MODEL,
+    'gemini-1.5-flash',
+    'gemini-flash-latest',
+]
 
 # System instruction for the Gemini model — establishes assistant persona
 SYSTEM_INSTRUCTION = (
@@ -26,11 +34,38 @@ SYSTEM_INSTRUCTION = (
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel(
-        model_name='gemini-flash-latest',
+        model_name=MODEL_CANDIDATES[0],
         system_instruction=SYSTEM_INSTRUCTION,
     )
 else:
     model = None
+
+
+def _generate_with_fallbacks(user_message):
+    """
+    Generate a response while gracefully handling invalid/deprecated model names.
+    """
+    last_error = None
+    for model_name in MODEL_CANDIDATES:
+        try:
+            active_model = genai.GenerativeModel(
+                model_name=model_name,
+                system_instruction=SYSTEM_INSTRUCTION,
+            )
+            return active_model.generate_content(user_message)
+        except Exception as exc:
+            last_error = exc
+            # Retry with next candidate only for "model not found / unsupported" style errors.
+            error_text = str(exc).lower()
+            is_model_error = (
+                'is not found' in error_text
+                or 'not supported for generatecontent' in error_text
+                or '404' in error_text
+            )
+            if not is_model_error:
+                raise
+
+    raise last_error
 
 
 @chat_bp.route('/', methods=['POST'])
@@ -68,7 +103,7 @@ def handle_chat():
         }), 200
 
     try:
-        response = model.generate_content(user_message)
+        response = _generate_with_fallbacks(user_message)
         return jsonify({'response': response.text}), 200
 
     except Exception as e:

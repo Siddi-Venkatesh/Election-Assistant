@@ -8,11 +8,11 @@ api_key = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=api_key)
 
 try:
-    model = genai.GenerativeModel('gemini-pro-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content("Hello, who are you?")
     print(f"Response: {response.text}")
 except Exception as e:
-    print(f"Error with gemini-pro-latest: {e}")
+    print(f"Error with gemini-1.5-flash: {e}")
 
 try:
     model = genai.GenerativeModel('gemini-flash-latest')
