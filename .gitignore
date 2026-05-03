@@ -11,6 +11,10 @@ backend/__pycache__/
 *.sqlite3
 backend/database.db
 
-# Environment variables (SECURITY)
+# Environment variables (SECURITY) - NEVER commit these
 .env
+.env.*
+!.env.example
 backend/.env
+backend/.env.*
+!backend/.env.example
