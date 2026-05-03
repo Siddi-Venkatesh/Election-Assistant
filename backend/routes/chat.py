@@ -26,7 +26,7 @@ SYSTEM_INSTRUCTION = (
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
     model = genai.GenerativeModel(
-        model_name='gemini-pro',
+        model_name='gemini-flash-latest',
         system_instruction=SYSTEM_INSTRUCTION,
     )
 else:
