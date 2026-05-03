@@ -99,6 +99,11 @@ function Layout({ children }) {
     }
   }, [isDarkMode]);
 
+  // Update HTML lang attribute for screen readers and SEO
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
   useEffect(() => {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -363,7 +368,7 @@ function Layout({ children }) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleChatOpen}
-          className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full shadow-[0_0_25px_rgba(99,102,241,0.7)] hover:shadow-[0_0_35px_rgba(99,102,241,0.9)] z-50 flex items-center justify-center group cursor-pointer border-2 border-indigo-300/30"
+          className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-600 text-white rounded-full shadow-[0_0_25px_rgba(99,102,241,0.7)] hover:shadow-[0_0_35px_rgba(99,102,241,0.9)] z-50 flex items-center justify-center group cursor-pointer border-2 border-indigo-300/30 focus-visible:ring-4 focus-visible:ring-indigo-400 focus-visible:ring-offset-4 dark:focus-visible:ring-offset-slate-950 outline-none"
           aria-label="Open AI Chat Assistant"
           aria-expanded={chatOpen}
           aria-haspopup="dialog"

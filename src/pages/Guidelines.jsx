@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { AlertTriangle, Check, X, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, Check, X, ShieldAlert, Calendar } from 'lucide-react';
 
 const dos = [
   "Bring your Voter ID (EPIC) or any of the 11 approved alternative photo IDs.",
@@ -58,11 +58,29 @@ const Guidelines = memo(function Guidelines() {
             </ul>
           </section>
         </div>
-        <div className="mt-8 bg-amber-50 dark:bg-amber-900/20 border border-amber-200/60 dark:border-amber-800/50 p-5 rounded-2xl flex gap-4 shadow-sm" role="alert">
-          <AlertTriangle className="w-6 h-6 text-amber-600 dark:text-amber-400 shrink-0" aria-hidden="true" />
-          <p className="text-sm font-medium text-amber-900 dark:text-amber-200 leading-relaxed">
-            Violation of these rules is a punishable offense under election laws. Please report any suspicious activity to the presiding officer immediately.
-          </p>
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200/60 dark:border-amber-800/50 p-5 rounded-3xl flex gap-4 shadow-sm" role="alert">
+            <AlertTriangle className="w-6 h-6 text-amber-600 dark:text-amber-400 shrink-0" aria-hidden="true" />
+            <p className="text-sm font-medium text-amber-900 dark:text-amber-200 leading-relaxed">
+              Violation of these rules is a punishable offense under election laws. Please report any suspicious activity immediately.
+            </p>
+          </div>
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200/60 dark:border-indigo-800/50 p-5 rounded-3xl flex flex-col gap-4 shadow-sm">
+            <div className="flex gap-3">
+              <Calendar className="w-6 h-6 text-indigo-600 dark:text-indigo-400 shrink-0" aria-hidden="true" />
+              <h4 className="font-bold text-indigo-900 dark:text-indigo-200">Set a Reminder</h4>
+            </div>
+            <p className="text-xs text-indigo-700 dark:text-indigo-300">Don't miss your chance to shape the future. Add Election Day to your calendar.</p>
+            <a 
+              href="https://www.google.com/calendar/render?action=TEMPLATE&text=Indian+General+Election+2024+Voting+Day&details=Don't+forget+to+carry+your+Voter+ID+and+vote!+Check+VoterAssist+for+guidelines.&location=Your+Polling+Booth&dates=20240513T023000Z/20240513T123000Z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white text-center py-2.5 rounded-xl font-bold text-sm shadow-md transition-all active:scale-95"
+              aria-label="Add Indian General Election 2024 Voting Day to Google Calendar"
+            >
+              Add to Google Calendar
+            </a>
+          </div>
         </div>
       </div>
     </div>

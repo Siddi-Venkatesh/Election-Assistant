@@ -8,6 +8,7 @@ vi.mock('lucide-react', () => ({
   Check: (props) => <svg data-testid="icon-check" {...props} />,
   X: (props) => <svg data-testid="icon-x" {...props} />,
   ShieldAlert: (props) => <svg data-testid="icon-shield" {...props} />,
+  Calendar: (props) => <svg data-testid="icon-calendar" {...props} />,
 }));
 
 describe('Guidelines Page', () => {
@@ -56,5 +57,13 @@ describe('Guidelines Page', () => {
     render(<Guidelines />);
     expect(document.getElementById('dos-heading')).toBeInTheDocument();
     expect(document.getElementById('donts-heading')).toBeInTheDocument();
+  });
+
+  it('renders the Google Calendar reminder link', () => {
+    render(<Guidelines />);
+    const link = screen.getByLabelText(/Add Indian General Election 2024 Voting Day to Google Calendar/i);
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', expect.stringContaining('google.com/calendar/render'));
+    expect(link).toHaveAttribute('target', '_blank');
   });
 });

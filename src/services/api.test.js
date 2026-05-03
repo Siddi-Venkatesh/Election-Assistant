@@ -1,9 +1,19 @@
+/**
+ * @fileoverview Tests for the API service layer.
+ * Validates sendChatMessage behavior: success, error handling, network failures,
+ * and request cancellation via AbortController.
+ */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { api } from './api';
 
 describe('api.sendChatMessage', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    // Provide a no-op AbortController mock in the test environment
+    global.AbortController = class {
+      constructor() { this.signal = {}; }
+      abort() {}
+    };
   });
 
   it('sends a POST request with the message and returns the response', async () => {
@@ -15,11 +25,11 @@ describe('api.sendChatMessage', () => {
 
     const result = await api.sendChatMessage('How do I register?');
 
-    expect(global.fetch).toHaveBeenCalledWith('/api/chat/', {
+    expect(global.fetch).toHaveBeenCalledWith('/api/chat/', expect.objectContaining({
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: 'How do I register?' }),
-    });
+    }));
     expect(result).toBe('Hello! I can help you with elections.');
   });
 
@@ -57,5 +67,17 @@ describe('api.sendChatMessage', () => {
 
     const body = JSON.parse(global.fetch.mock.calls[0][1].body);
     expect(body.message).toBe('What is EPIC?');
+  });
+
+  it('attaches an AbortController signal to the request', async () => {
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ response: 'ok' }),
+    });
+
+    await api.sendChatMessage('test signal');
+
+    const callArgs = global.fetch.mock.calls[0][1];
+    expect(callArgs).toHaveProperty('signal');
   });
 });

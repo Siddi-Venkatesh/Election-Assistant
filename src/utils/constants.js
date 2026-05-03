@@ -47,5 +47,16 @@ export const SUPPORTED_LANGUAGES = [
   { code: 'te', label: 'తెలుగు' },
 ];
 
-/** Google Analytics Measurement ID */
-export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+/**
+ * Google Analytics 4 Measurement ID.
+ * Configured via the VITE_GA_MEASUREMENT_ID environment variable
+ * for environment-specific deployments.
+ */
+export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-ELECTION2024';
+
+/**
+ * Google Cloud Translation API key.
+ * Configured via the VITE_GOOGLE_TRANSLATE_API_KEY environment variable.
+ * Restricted to Translation API + HTTP referrer for security.
+ */
+export const GOOGLE_TRANSLATE_API_KEY = import.meta.env.VITE_GOOGLE_TRANSLATE_API_KEY || '';

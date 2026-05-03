@@ -199,9 +199,20 @@ export default function Booth() {
                       <td className="px-4 py-4 border-r border-slate-200 dark:border-slate-700 text-sm leading-relaxed max-w-[200px]">{result.pollingStation}</td>
                       <td className="px-4 py-4 border-r border-slate-200 dark:border-slate-700 text-center">{result.partSerialNumber}</td>
                       <td className="px-4 py-4 text-center">
-                        <button className="text-[#1a73e8] dark:text-blue-400 hover:underline font-medium text-sm text-center" aria-label={`View details for ${result.nameEn}`}>
-                          View<br/>Details
-                        </button>
+                        <div className="flex flex-col gap-2 items-center">
+                          <button className="text-[#1a73e8] dark:text-blue-400 hover:underline font-bold text-xs" aria-label={`View details for ${result.nameEn}`}>
+                            View Details
+                          </button>
+                          <a 
+                            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(result.pollingStation + ', ' + result.district + ', ' + result.state)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 hover:underline font-bold text-xs"
+                            aria-label={`View ${result.pollingStation} on Google Maps`}
+                          >
+                            <MapPin className="w-3 h-3" /> Maps
+                          </a>
+                        </div>
                       </td>
                     </tr>
                   </tbody>

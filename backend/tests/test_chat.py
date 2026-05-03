@@ -28,7 +28,6 @@ class TestChatRoute:
             data=json.dumps({'message': ''}),
             content_type='application/json'
         )
-        # Empty string should trigger the "Message is required" check
         assert response.status_code == 400
 
     def test_chat_returns_200_with_valid_message(self, client):
@@ -75,3 +74,55 @@ class TestChatRoute:
                 content_type='application/json'
             )
             assert response.content_type.startswith('application/json')
+
+    def test_chat_rejects_malformed_json(self, client):
+        """Should return 400 when the request body is not valid JSON."""
+        response = client.post(
+            '/api/chat/',
+            data='not-json-at-all',
+            content_type='application/json'
+        )
+        assert response.status_code == 400
+
+    def test_chat_rejects_message_exceeding_max_length(self, client):
+        """Should return 400 when message is longer than 1000 characters."""
+        long_message = 'A' * 1001
+        response = client.post(
+            '/api/chat/',
+            data=json.dumps({'message': long_message}),
+            content_type='application/json'
+        )
+        assert response.status_code == 400
+        data = json.loads(response.data)
+        assert 'length' in data.get('message', '').lower() or '1000' in data.get('message', '')
+
+    def test_chat_trims_whitespace_only_message(self, client):
+        """Should return 400 for whitespace-only messages."""
+        response = client.post(
+            '/api/chat/',
+            data=json.dumps({'message': '   '}),
+            content_type='application/json'
+        )
+        assert response.status_code == 400
+
+
+class TestHealthEndpoint:
+    """Test suite for the /api/health endpoint."""
+
+    def test_health_returns_200(self, client):
+        """Health check should return 200 OK."""
+        response = client.get('/api/health')
+        assert response.status_code == 200
+
+    def test_health_returns_ok_status(self, client):
+        """Health check should return status: ok."""
+        response = client.get('/api/health')
+        data = json.loads(response.data)
+        assert data.get('status') == 'ok'
+
+    def test_health_returns_service_name(self, client):
+        """Health check should identify the service."""
+        response = client.get('/api/health')
+        data = json.loads(response.data)
+        assert 'service' in data
+

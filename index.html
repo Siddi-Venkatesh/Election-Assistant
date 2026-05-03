@@ -1,30 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="G-ELECTION-SEARCH-CONSOLE-VERIFICATION" />
     <meta name="description" content="VoterAssist - An interactive Election Process Education assistant that guides first-time voters through eligibility, registration, polling booth search, and voting day guidelines. Powered by Google Gemini AI." />
+    <meta name="keywords" content="voter registration, election process, India, ECI, polling booth, EPIC, voter ID, election education" />
     <meta name="theme-color" content="#4f46e5" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VoterAssist — Election Process Education Assistant" />
+    <meta property="og:description" content="Step-by-step guide to the Indian election process powered by Google Gemini AI." />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
+
     <!-- DNS Prefetch and Preconnect for Google APIs -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://translation.googleapis.com" />
 
     <title>VoterAssist — Election Process Education Assistant</title>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 — Measurement ID configured via VITE_GA_MEASUREMENT_ID env var -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELECTION2024"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      // Privacy-first configuration: anonymize IPs and disable ad personalization
+      gtag('config', 'G-ELECTION2024', {
+        anonymize_ip: true,
+        allow_ad_personalization_signals: false,
+        cookie_flags: 'SameSite=None;Secure',
+      });
     </script>
+
+    <!-- Google Translate Element — provides on-demand machine translation
+         for languages beyond the built-in i18next locales (EN/HI/TE) -->
+    <script>
+      function googleTranslateElementInit() {
+        if (typeof google !== 'undefined' && google.translate) {
+          new google.translate.TranslateElement(
+            {
+              pageLanguage: 'en',
+              includedLanguages: 'en,hi,te,ta,mr,bn,gu,kn,ml,pa,ur',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              autoDisplay: false,
+            },
+            'google_translate_element'
+          );
+        }
+      }
+    </script>
+    <script async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <!-- Structured Data for Search Engines -->
     <script type="application/ld+json">
